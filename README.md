@@ -1,65 +1,187 @@
-# Geometria RPG
+# 🎮 Geometria RPG
 
-Uma experiência mobile-first de Geometria Euclidiana e Analítica organizada em um caminho único. Cada missão ensina, pede uma decisão matemática, oferece feedback, entrega XP/estrelas e desbloqueia a próxima etapa. O progresso permanece no dispositivo via `localStorage`.
+Experiência mobile-first de **Geometria Euclidiana e Analítica** organizada como uma campanha única, com progressão, feedback matemático e domínio baseado em evidência.
 
-## Jornada principal
+Cada missão ensina, propõe uma decisão, registra uma tentativa e desbloqueia o próximo passo sem transformar simples leitura em “domínio”.
 
-- **Ala da Congruência:** mini lesson de correspondência, OPV, LAL, ALA, checkpoint e Boss Proof;
-- **Passagem das Paralelas:** famílias angulares, conversas e paralelogramo;
-- **Forja Analítica:** plano cartesiano, equações gerais, SPD/SI/SPI, crossover e modelagem métrica.
+## 🗺️ Campanha principal
 
-O ponto de entrada é `/map`. A navegação principal foi reduzida a **Caminho**, **Perfil** e **Conquistas**; Codex, treino, revisão, campanhas e as expedições anteriores continuam preservados na Biblioteca da Academia, dentro do Perfil.
+### 🛡️ Ala da Congruência
 
-Nenhuma rota concede domínio por leitura. Somente tentativas matemáticas registradas alteram o perfil. A progressão V4 mantém XP, nível, estrelas, sequência por dias, quests, conquistas e revisão espaçada, mas calcula domínio H1–H15 em um fluxo independente baseado em correção, justificação, independência e verificação. Dados V1/V2/V3 são migrados sem apagar a chave V3 de origem.
+- correspondência;
+- OPV;
+- LAL;
+- ALA;
+- checkpoint;
+- Boss Proof.
 
-“Continuar jornada” sempre aponta para a próxima missão principal incompleta. Revisões vencidas e recomendações adaptativas aparecem como rotas secundárias opcionais; elas não bloqueiam nem reordenam a campanha.
+### 🧭 Passagem das Paralelas
 
-## Desenvolvimento
+- famílias angulares;
+- relações entre retas;
+- paralelogramo;
+- conexões com provas.
+
+### ⚒️ Forja Analítica
+
+- plano cartesiano;
+- equações gerais;
+- SPD, SPI e SI;
+- crossover entre geometria e álgebra;
+- modelagem métrica.
+
+## 🚪 Entrada principal
+
+```text
+/map
+```
+
+A navegação principal foi reduzida a:
+
+- **Caminho**;
+- **Perfil**;
+- **Conquistas**.
+
+Conteúdos auxiliares continuam preservados na Biblioteca da Academia.
+
+## 🧠 Motor adaptativo V4
+
+A progressão mantém:
+
+- XP;
+- nível;
+- estrelas;
+- sequência por dias;
+- quests;
+- conquistas;
+- revisão espaçada.
+
+Mas o domínio H1–H15 é calculado separadamente a partir de evidências.
+
+O motor considera dimensões como:
+
+- correção;
+- justificação;
+- independência;
+- verificação.
+
+Dados V1/V2/V3 são migrados para V4 sem apagar a origem necessária à recuperação.
+
+Documentação:
+
+```text
+docs/adaptive-engine.md
+```
+
+## 🎯 Regra de domínio
+
+**Leitura não concede domínio.**
+
+Somente tentativas matemáticas registradas alteram o perfil de competência.
+
+“Continuar jornada” aponta para a próxima missão principal incompleta.
+
+Revisões e recomendações adaptativas aparecem como rotas secundárias e não bloqueiam arbitrariamente a campanha.
+
+## 🧱 Stack
+
+- React;
+- TypeScript;
+- Vite;
+- Vitest;
+- Playwright;
+- SPA estática.
+
+Não há backend obrigatório para o runtime principal.
+
+## 🚀 Desenvolvimento
 
 ```bash
 npm install
 npm run dev
 ```
 
-## Build
+## 🏗️ Build
 
 ```bash
 npm run build
 npm run preview
 ```
 
-O projeto é uma SPA React + TypeScript + Vite. O bundle estático é gerado em `dist/` e não depende de servidor Node ou backend.
+Saída:
 
-## Qualidade
-
-```bash
-npm run test       # Vitest: regras puras e integridade do conteúdo
-npm run test:e2e   # Playwright: aplicação real em Chromium
-npm run qa         # lint + unitários + build + E2E
+```text
+dist/
 ```
 
-O relatório reproduzível de aceite está em [`QA_REPORT.md`](./QA_REPORT.md).
+## ✅ Qualidade
 
-## Deploy público
+```bash
+npm run test
+npm run test:e2e
+npm run qa
+```
 
-- Repositório: https://github.com/menezesx2k26-byte/geometria-rpg
-- Produção: https://geometria-rpg.pages.dev
-- Preview QA: https://qa-preview.geometria-rpg.pages.dev
-- Production branch: `main`
-- Build command: `npm run build`
-- Build output directory: `dist`
+O relatório de aceite está em:
 
-O arquivo `public/_redirects` aplica o fallback da SPA. Isso permite abrir e recarregar diretamente rotas como `/map`, `/encounter/:id` e `/codex/:id`.
+```text
+QA_REPORT.md
+```
 
-O release atual foi publicado por Direct Upload com Wrangler e está associado ao hash do commit no histórico do Pages. Novos pushes precisam de novo deploy pelo Wrangler. Pela limitação do Pages, a integração Git nativa exigirá um novo projeto criado no dashboard depois da autorização OAuth do GitHub.
+## ☁️ Deploy
 
-## Arquitetura
+Repositório atual:
 
-- `src/data`: conteúdo declarativo, sem hardcode nas páginas;
-- `src/engine`: regras puras dos encounters, provas, geometria analítica, assessment C/J/I/V, evidências, migração e seleção adaptativa;
-- `src/state`: progresso persistido localmente;
-- `src/components`: interfaces reutilizáveis de geometria, gameplay, prova e navegação;
-- `src/pages`: mapa, campanhas, encounters, Proof Engine, laboratórios de modelagem, Codex, treino filtrável e revisão adaptativa;
-- `src/types`: modelo do domínio matemático e pedagógico.
+```text
+menezesx2k26-byte/edu-geometria-rpg
+```
 
-A arquitetura e as garantias do motor V4 estão documentadas em [`docs/adaptive-engine.md`](./docs/adaptive-engine.md).
+Produção:
+
+```text
+https://geometria-rpg.pages.dev
+```
+
+Preview QA:
+
+```text
+https://qa-preview.geometria-rpg.pages.dev
+```
+
+Configuração:
+
+```text
+Production branch: main
+Build command: npm run build
+Build output directory: dist
+```
+
+`public/_redirects` aplica fallback da SPA para permitir acesso direto a rotas internas.
+
+## 🧩 Arquitetura
+
+```text
+src/data        conteúdo declarativo
+src/engine      regras e avaliação
+src/state       progresso persistido
+src/components  UI reutilizável
+src/pages       mapa, campanhas e laboratórios
+src/types       contratos de domínio
+```
+
+## 🧪 Garantias do motor
+
+A implementação separa:
+
+- progresso narrativo;
+- XP/recompensas;
+- evidência matemática;
+- domínio por habilidade;
+- seleção adaptativa;
+- migração de estado.
+
+Essa separação reduz o risco de recompensas visuais mascararem lacunas matemáticas.
+
+---
+
+**Status:** motor adaptativo V4 integrado, campanha principal ativa e documentação alinhada ao repositório atual. 🧠
