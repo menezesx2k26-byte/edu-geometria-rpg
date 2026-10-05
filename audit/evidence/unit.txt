@@ -1,0 +1,28 @@
+
+> geometria-rpg@0.1.0 test:unit
+> node --test tests/engine.test.mjs
+
+✔ scheduler selects ten distinct and uses remaining unseen questions next session (8.30112ms)
+✔ small and empty eligible pools terminate without early duplicate (0.336443ms)
+✔ due review and wrong/low confidence are pedagogical priorities (0.959246ms)
+✔ exhausted pool prefers least exposures; queues deterministic for same state and seed (1.982837ms)
+✔ Fisher–Yates options preserve correct ID through every permutation (15.811244ms)
+✔ answer/advance survives JSON reload and double submissions do not grant extra evidence (0.985501ms)
+✔ study and confidence cannot award mastery; repeated answer cannot farm mastery (0.644235ms)
+✔ migration preserves compatible v1 progress, counts and maps studied skill (0.435819ms)
+✔ migration rejects invalid containers and unknown future versions (0.780422ms)
+✔ proof accepts independent hypothesis order, rejects causal jump, omission and duplicate (0.808501ms)
+✔ review deadline at skill level prioritizes a previously successful concept (1.946968ms)
+✔ clamps mastery after wrong answers and repeated proofs cannot farm evidence (0.696645ms)
+✔ bank IDs, classifications, all skill coverage, generated OPV answers and causal proof orders (50.364664ms)
+✔ spaced retrieval can improve mastery without immediate-repeat farming or stretching deadlines (0.194146ms)
+✔ large numeric variant families do not crowd out other skills and reasoning forms (2.018821ms)
+✔ migration rejects sessions that would freeze training or contain unrelated answers (0.616216ms)
+ℹ tests 16
+ℹ suites 0
+ℹ pass 16
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 372.739456

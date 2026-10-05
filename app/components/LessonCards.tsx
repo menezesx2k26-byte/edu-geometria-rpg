@@ -10,16 +10,12 @@ const iconMap: Record<LessonBlockType, typeof BookOpen> = {
   definition: BookOpen,
   postulate: Gem,
   theorem: Crown,
-  corollary: SparkIcon,
+  corollary: Gem,
   proposition: Scale,
   example: Lightbulb,
   warning: AlertTriangle,
   comparison: FlaskConical,
 };
-
-function SparkIcon(props: React.ComponentProps<typeof Gem>) {
-  return <Gem {...props} />;
-}
 
 const labels: Record<LessonBlockType, string> = {
   definition: "Definição",

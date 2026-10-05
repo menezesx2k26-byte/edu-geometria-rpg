@@ -1,0 +1,33 @@
+{
+  "devDiagnosticsAbsent": true,
+  "clientChunks": [
+    {
+      "name": "_next/static/7f085d40-6386-4d76-88bd-4198d660031f/_buildManifest.js",
+      "sha256": "47f02b34be6dc481257b6efce4c19e19111f37ef5c437f8ffed44f0da97fa9bb"
+    },
+    {
+      "name": "_next/static/7f085d40-6386-4d76-88bd-4198d660031f/_ssgManifest.js",
+      "sha256": "653f3e53e89b4f8548ff86c19e92bb3c6b84b6be7485a320b1e00893ed877479"
+    },
+    {
+      "name": "_next/static/chunks/GeometryApp-Cg9L2DpI.js",
+      "sha256": "9e82a6af7830443e614fdf8d9af2a9fd7500081001bf83aedc3dac4a436d0bc9"
+    },
+    {
+      "name": "_next/static/chunks/framework-BgSIrAUN.js",
+      "sha256": "a8e611453a742bf422100cc5f20f7f4139295740492196303a191d9f17033206"
+    },
+    {
+      "name": "_next/static/chunks/index-BCcrNrwC.js",
+      "sha256": "b28d1f4f16e325fb9c010b30e3f4391d535396f6b8ee1a7be3ef5d0dff88213f"
+    },
+    {
+      "name": "_next/static/chunks/layout-segment-context-DQSnwjvY.js",
+      "sha256": "d2eb98676f10189ca8e6fd4476d51d2b8f0fb1e22d89dce3bb45046843e3b180"
+    },
+    {
+      "name": "_next/static/chunks/rolldown-runtime-C60lm6uB.js",
+      "sha256": "5db5ba82eef00d1dee7e86e663098c9427d01183a88d357437daff295aec3e75"
+    }
+  ]
+}

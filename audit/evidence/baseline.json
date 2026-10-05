@@ -1,0 +1,44 @@
+[
+  {
+    "origin": "https://geometria-rpg-academia.menezesx2k26.chatgpt.site",
+    "sequence": [
+      "Qual hipótese caracteriza AD como mediana relativa a A?",
+      "Você conhece dois lados e o ângulo ENTRE eles. Qual critério pode usar?",
+      "Se △ABC ≅ △DEF, qual lado corresponde a AC?",
+      "Em △ABC, AB ≅ AC. Qual resultado já pode ser usado?",
+      "Qual escrita distingue corretamente objeto geométrico e medida?",
+      "AD é bissetriz. Então BD ≅ DC, em qualquer triângulo.",
+      "Uma altura pode ficar fora do triângulo.",
+      "Dois ângulos opostos pelo vértice medem (3x + 5)° e 80°. Quanto vale x?",
+      "Qual afirmação distingue congruência de semelhança?",
+      "Um lado parece maior no desenho. Isso basta para concluir que sua medida é maior?",
+      "Qual hipótese caracteriza AD como mediana relativa a A?"
+    ],
+    "reentry": "Qual hipótese caracteriza AD como mediana relativa a A?",
+    "storage": {
+      "geometria-rpg-progress-v1": "{\"mastery\":{\"median-bisector-altitude\":5,\"lal\":0,\"congruence\":10,\"isosceles\":0,\"fundamentals\":20,\"segments-angles\":0},\"studiedSections\":[\"fundamentals\"],\"questions\":{\"q-median\":{\"attempts\":2,\"correct\":0},\"q-lal\":{\"attempts\":1,\"correct\":0},\"q-correspondence\":{\"attempts\":1,\"correct\":0},\"q-isosceles\":{\"attempts\":1,\"correct\":0},\"q-segment\":{\"attempts\":1,\"correct\":0},\"q-bisector\":{\"attempts\":1,\"correct\":0},\"q-altitude\":{\"attempts\":1,\"correct\":1},\"q-opv\":{\"attempts\":1,\"correct\":0},\"q-congruence-similarity\":{\"attempts\":1,\"correct\":1},\"q-drawing\":{\"attempts\":1,\"correct\":0}},\"proofAttempts\":{},\"lastSection\":\"fundamentals\",\"updatedAt\":\"2026-10-05T23:30:12.612Z\"}"
+    },
+    "errors": []
+  },
+  {
+    "origin": "http://localhost:3000",
+    "sequence": [
+      "Qual hipótese caracteriza AD como mediana relativa a A?",
+      "Você conhece dois lados e o ângulo ENTRE eles. Qual critério pode usar?",
+      "Se △ABC ≅ △DEF, qual lado corresponde a AC?",
+      "Em △ABC, AB ≅ AC. Qual resultado já pode ser usado?",
+      "Qual escrita distingue corretamente objeto geométrico e medida?",
+      "AD é bissetriz. Então BD ≅ DC, em qualquer triângulo.",
+      "Uma altura pode ficar fora do triângulo.",
+      "Dois ângulos opostos pelo vértice medem (3x + 5)° e 80°. Quanto vale x?",
+      "Qual afirmação distingue congruência de semelhança?",
+      "Um lado parece maior no desenho. Isso basta para concluir que sua medida é maior?",
+      "Qual hipótese caracteriza AD como mediana relativa a A?"
+    ],
+    "reentry": "Qual hipótese caracteriza AD como mediana relativa a A?",
+    "storage": {
+      "geometria-rpg-progress-v1": "{\"mastery\":{\"median-bisector-altitude\":5,\"lal\":0,\"congruence\":10,\"isosceles\":0,\"fundamentals\":20,\"segments-angles\":0},\"studiedSections\":[\"fundamentals\"],\"questions\":{\"q-median\":{\"attempts\":2,\"correct\":0},\"q-lal\":{\"attempts\":1,\"correct\":0},\"q-correspondence\":{\"attempts\":1,\"correct\":0},\"q-isosceles\":{\"attempts\":1,\"correct\":0},\"q-segment\":{\"attempts\":1,\"correct\":0},\"q-bisector\":{\"attempts\":1,\"correct\":0},\"q-altitude\":{\"attempts\":1,\"correct\":1},\"q-opv\":{\"attempts\":1,\"correct\":0},\"q-congruence-similarity\":{\"attempts\":1,\"correct\":1},\"q-drawing\":{\"attempts\":1,\"correct\":0}},\"proofAttempts\":{},\"lastSection\":\"fundamentals\",\"updatedAt\":\"2026-10-05T23:30:22.595Z\"}"
+    },
+    "errors": []
+  }
+]

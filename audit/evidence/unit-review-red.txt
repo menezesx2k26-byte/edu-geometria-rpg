@@ -1,0 +1,46 @@
+✔ scheduler selects ten distinct and uses remaining unseen questions next session (4.058685ms)
+✔ small and empty eligible pools terminate without early duplicate (0.252203ms)
+✔ due review and wrong/low confidence are pedagogical priorities (0.206275ms)
+✔ exhausted pool prefers least exposures; queues deterministic for same state and seed (1.759492ms)
+✔ Fisher–Yates options preserve correct ID through every permutation (0.780106ms)
+✔ answer/advance survives JSON reload and double submissions do not grant extra evidence (0.654481ms)
+✔ study and confidence cannot award mastery; repeated answer cannot farm mastery (0.407585ms)
+✔ migration preserves compatible v1 progress, counts and maps studied skill (0.506449ms)
+✔ migration rejects invalid containers and unknown future versions (0.284964ms)
+✔ proof accepts independent hypothesis order, rejects causal jump, omission and duplicate (0.24202ms)
+✖ review deadline at skill level prioritizes a previously successful concept (1.136291ms)
+✔ clamps mastery after wrong answers and repeated proofs cannot farm evidence (0.433481ms)
+✔ bank IDs, classifications, all skill coverage, generated OPV answers and causal proof orders (4.160206ms)
+ℹ tests 13
+ℹ suites 0
+ℹ pass 12
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 138.37396
+
+✖ failing tests:
+
+test at tests/engine.test.mjs:145:1
+✖ review deadline at skill level prioritizes a previously successful concept (1.136291ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + 'unseen'
+  - 'due-review'
+  
+      at TestContext.<anonymous> (file:///workspace/geometria-production/tests/engine.test.mjs:147:43)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'unseen',
+    expected: 'due-review',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

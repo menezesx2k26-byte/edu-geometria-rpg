@@ -1,0 +1,87 @@
+
+> geometria-rpg@0.1.0 test
+> npm run build && npm run test:unit && node --test tests/rendered-html.test.mjs
+
+
+> geometria-rpg@0.1.0 build
+> vinext build
+
+
+  vinext build  (Vite 8.0.13)
+
+[33m▲ [43;33m[[43;30mWARNING[43;33m][0m [1mProxy environment variables detected. We'll use your proxy for fetch requests.[0m
+
+
+[1/5] analyze client references...
+[2Ktransforming...✓ 219 modules transformed.
+rendering chunks...
+✓ built in 500ms
+[2/5] analyze server references...
+[2Ktransforming...✓ 177 modules transformed.
+rendering chunks...
+✓ built in 463ms
+[3/5] build rsc environment...
+[2Ktransforming...✓ 217 modules transformed.
+rendering chunks...
+computing gzip size...
+✓ built in 542ms
+[4/5] build client environment...
+[2Ktransforming...✓ 1955 modules transformed.
+rendering chunks...
+computing gzip size...
+✓ built in 1.67s
+[5/5] build ssr environment...
+[2Ktransforming...✓ 183 modules transformed.
+rendering chunks...
+computing gzip size...
+✓ built in 806ms
+[0m
+  Route (app)
+  ─ ? /
+
+  ? Unknown
+
+  ? Some routes could not be classified. vinext currently uses static analysis
+    and cannot detect dynamic API usage (headers(), cookies(), etc.) at build time.
+    Automatic classification will be improved in a future release.
+
+  Build complete. Run `vinext start` to start the production server.
+
+
+> geometria-rpg@0.1.0 test:unit
+> node --test tests/engine.test.mjs
+
+✔ scheduler selects ten distinct and uses remaining unseen questions next session (2.263471ms)
+✔ small and empty eligible pools terminate without early duplicate (0.344945ms)
+✔ due review and wrong/low confidence are pedagogical priorities (0.327219ms)
+✔ exhausted pool prefers least exposures; queues deterministic for same state and seed (1.29942ms)
+✔ Fisher–Yates options preserve correct ID through every permutation (7.277007ms)
+✔ answer/advance survives JSON reload and double submissions do not grant extra evidence (0.903395ms)
+✔ study and confidence cannot award mastery; repeated answer cannot farm mastery (0.327541ms)
+✔ migration preserves compatible v1 progress, counts and maps studied skill (0.277881ms)
+✔ migration rejects invalid containers and unknown future versions (0.356173ms)
+✔ proof accepts independent hypothesis order, rejects causal jump, omission and duplicate (0.338181ms)
+✔ review deadline at skill level prioritizes a previously successful concept (0.272621ms)
+✔ clamps mastery after wrong answers and repeated proofs cannot farm evidence (0.875642ms)
+✔ bank IDs, classifications, all skill coverage, generated OPV answers and causal proof orders (5.011192ms)
+✔ spaced retrieval can improve mastery without immediate-repeat farming or stretching deadlines (0.146657ms)
+✔ large numeric variant families do not crowd out other skills and reasoning forms (1.340716ms)
+✔ migration rejects sessions that would freeze training or contain unrelated answers (0.375854ms)
+ℹ tests 16
+ℹ suites 0
+ℹ pass 16
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 152.030674
+✔ renderiza a academia de geometria com as seis áreas (151.279896ms)
+✔ mantém conteúdo, progresso e componentes fora da página raiz (3.417387ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 2
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 217.579605

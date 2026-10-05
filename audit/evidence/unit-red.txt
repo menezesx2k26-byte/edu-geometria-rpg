@@ -1,0 +1,201 @@
+✖ scheduler selects ten distinct and uses remaining unseen questions next session (8.21026ms)
+✔ small and empty eligible pools terminate without early duplicate (0.223126ms)
+✖ due review and wrong/low confidence are pedagogical priorities (0.485664ms)
+✖ exhausted pool prefers least exposures; queues deterministic for same state and seed (0.429145ms)
+✖ Fisher–Yates options preserve correct ID through every permutation (0.493493ms)
+✖ answer/advance survives JSON reload and double submissions do not grant extra evidence (1.131137ms)
+✖ study and confidence cannot award mastery; repeated answer cannot farm mastery (0.314615ms)
+✖ migration preserves compatible v1 progress, counts and maps studied skill (0.220716ms)
+✖ migration rejects invalid containers and unknown future versions (0.633879ms)
+✖ proof accepts independent hypothesis order, rejects causal jump, omission and duplicate (0.807715ms)
+ℹ tests 10
+ℹ suites 0
+ℹ pass 1
+ℹ fail 9
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 136.440472
+
+✖ failing tests:
+
+test at tests/engine.test.mjs:9:1
+✖ scheduler selects ten distinct and uses remaining unseen questions next session (8.21026ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(b.queue.slice(0,2).every(q=>!a.queue.some(a=>a.questionId===q.questionId)))
+  
+      at TestContext.<anonymous> (file:///workspace/geometria-production/tests/engine.test.mjs:9:364)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.start (node:internal/test_runner/test:1242:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/engine.test.mjs:11:1
+✖ due review and wrong/low confidence are pedagogical priorities (0.485664ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  'q0' !== 'q11'
+  
+      at TestContext.<anonymous> (file:///workspace/geometria-production/tests/engine.test.mjs:11:240)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'q0',
+    expected: 'q11',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/engine.test.mjs:12:1
+✖ exhausted pool prefers least exposures; queues deterministic for same state and seed (0.429145ms)
+  AssertionError [ERR_ASSERTION]: Expected "actual" to be strictly unequal to: 'q0'
+      at TestContext.<anonymous> (file:///workspace/geometria-production/tests/engine.test.mjs:12:271)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'q0',
+    expected: 'q0',
+    operator: 'notStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/engine.test.mjs:13:1
+✖ Fisher–Yates options preserve correct ID through every permutation (0.493493ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  1 !== 3
+  
+      at TestContext.<anonymous> (file:///workspace/geometria-production/tests/engine.test.mjs:13:383)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 1,
+    expected: 3,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/engine.test.mjs:14:1
+✖ answer/advance survives JSON reload and double submissions do not grant extra evidence (1.131137ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  0 !== 1
+  
+      at TestContext.<anonymous> (file:///workspace/geometria-production/tests/engine.test.mjs:14:511)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 0,
+    expected: 1,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/engine.test.mjs:15:1
+✖ study and confidence cannot award mastery; repeated answer cannot farm mastery (0.314615ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  20 !== 0
+  
+      at TestContext.<anonymous> (file:///workspace/geometria-production/tests/engine.test.mjs:15:166)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 20,
+    expected: 0,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/engine.test.mjs:16:1
+✖ migration preserves compatible v1 progress, counts and maps studied skill (0.220716ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  undefined !== 2
+  
+      at TestContext.<anonymous> (file:///workspace/geometria-production/tests/engine.test.mjs:16:330)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: 2,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/engine.test.mjs:17:1
+✖ migration rejects invalid containers and unknown future versions (0.633879ms)
+  AssertionError [ERR_ASSERTION]: Missing expected exception.
+      at TestContext.<anonymous> (file:///workspace/geometria-production/tests/engine.test.mjs:17:85)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: undefined,
+    operator: 'throws',
+    diff: 'simple'
+  }
+
+test at tests/engine.test.mjs:18:1
+✖ proof accepts independent hypothesis order, rejects causal jump, omission and duplicate (0.807715ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(validateProofOrder(proof,['b','a','c','d']))
+  
+      at TestContext.<anonymous> (file:///workspace/geometria-production/tests/engine.test.mjs:18:228)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }

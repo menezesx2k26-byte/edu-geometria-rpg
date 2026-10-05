@@ -1,0 +1,76 @@
+
+Running 24 tests using 1 worker
+
+(node:2302) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [360x800] › tests/e2e/app.spec.ts:14:1 › training queue survives reload, reentry and respects history across sessions (7.3s)
+  ✓   2 [360x800] › tests/e2e/app.spec.ts:63:1 › lesson study is separate from mathematical mastery and unlocks reading (790ms)
+  ✓   3 [360x800] › tests/e2e/app.spec.ts:83:1 › migration retains v1 byte-for-byte and resumes legacy mastery (481ms)
+  ✓   4 [360x800] › tests/e2e/app.spec.ts:115:1 › all six areas, browser navigation, touch controls and layout (6.6s)
+  ✓   5 [360x800] › tests/e2e/app.spec.ts:160:1 › proof accepts swapped independent hypotheses and does not reward repeated verify (2.3s)
+  ✓   6 [360x800] › tests/e2e/app.spec.ts:202:1 › malformed storage remains recoverable and produces a visible message (458ms)
+(node:2431) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   7 [390x844] › tests/e2e/app.spec.ts:14:1 › training queue survives reload, reentry and respects history across sessions (5.6s)
+  ✓   8 [390x844] › tests/e2e/app.spec.ts:63:1 › lesson study is separate from mathematical mastery and unlocks reading (918ms)
+  ✓   9 [390x844] › tests/e2e/app.spec.ts:83:1 › migration retains v1 byte-for-byte and resumes legacy mastery (459ms)
+  ✘  10 [390x844] › tests/e2e/app.spec.ts:115:1 › all six areas, browser navigation, touch controls and layout (7.5s)
+(node:2565) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  11 [390x844] › tests/e2e/app.spec.ts:160:1 › proof accepts swapped independent hypotheses and does not reward repeated verify (1.3s)
+  ✓  12 [390x844] › tests/e2e/app.spec.ts:202:1 › malformed storage remains recoverable and produces a visible message (475ms)
+(node:2641) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  13 [412x915] › tests/e2e/app.spec.ts:14:1 › training queue survives reload, reentry and respects history across sessions (6.9s)
+  ✓  14 [412x915] › tests/e2e/app.spec.ts:63:1 › lesson study is separate from mathematical mastery and unlocks reading (839ms)
+  ✓  15 [412x915] › tests/e2e/app.spec.ts:83:1 › migration retains v1 byte-for-byte and resumes legacy mastery (463ms)
+  ✓  16 [412x915] › tests/e2e/app.spec.ts:115:1 › all six areas, browser navigation, touch controls and layout (6.2s)
+  ✓  17 [412x915] › tests/e2e/app.spec.ts:160:1 › proof accepts swapped independent hypotheses and does not reward repeated verify (2.3s)
+  ✓  18 [412x915] › tests/e2e/app.spec.ts:202:1 › malformed storage remains recoverable and produces a visible message (504ms)
+(node:2807) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  19 [1366x768] › tests/e2e/app.spec.ts:14:1 › training queue survives reload, reentry and respects history across sessions (6.4s)
+  ✓  20 [1366x768] › tests/e2e/app.spec.ts:63:1 › lesson study is separate from mathematical mastery and unlocks reading (869ms)
+  ✓  21 [1366x768] › tests/e2e/app.spec.ts:83:1 › migration retains v1 byte-for-byte and resumes legacy mastery (573ms)
+  ✓  22 [1366x768] › tests/e2e/app.spec.ts:115:1 › all six areas, browser navigation, touch controls and layout (8.6s)
+  ✓  23 [1366x768] › tests/e2e/app.spec.ts:160:1 › proof accepts swapped independent hypotheses and does not reward repeated verify (2.6s)
+  ✓  24 [1366x768] › tests/e2e/app.spec.ts:202:1 › malformed storage remains recoverable and produces a visible message (854ms)
+
+
+  1) [390x844] › tests/e2e/app.spec.ts:115:1 › all six areas, browser navigation, touch controls and layout 
+
+    Error: expect(locator).toContainText(expected) failed
+
+    Locator: locator('main h1')
+    Expected substring: "Exercícios"
+    Error: strict mode violation: locator('main h1') resolved to 2 elements:
+        1) <h1>…</h1> aka getByRole('heading', { name: 'Construa a teoria. Prove os' })
+        2) <h1>A teoria tem uma ordem</h1> aka getByRole('heading', { name: 'A teoria tem uma ordem' })
+
+    Call log:
+      - Expect "toContainText" locator('main h1') with timeout 5000ms
+      - waiting for locator('main h1')
+
+
+      155 |   await expect(page).toHaveURL(/#exercises/);
+      156 |   await page.reload();
+    > 157 |   await expect(page.locator("main h1")).toContainText("Exercícios");
+          |                                         ^
+      158 |   expect(errors).toEqual([]);
+      159 | });
+      160 | test("proof accepts swapped independent hypotheses and does not reward repeated verify", async ({
+        at /workspace/geometria-production/tests/e2e/app.spec.ts:157:41
+
+    Error Context: test-results/app-all-six-areas-browser--5ffaf-n-touch-controls-and-layout-390x844/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/app-all-six-areas-browser--5ffaf-n-touch-controls-and-layout-390x844/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/app-all-six-areas-browser--5ffaf-n-touch-controls-and-layout-390x844/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    [390x844] › tests/e2e/app.spec.ts:115:1 › all six areas, browser navigation, touch controls and layout 
+  23 passed (1.3m)

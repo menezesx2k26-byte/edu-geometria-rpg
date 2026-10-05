@@ -1,0 +1,13 @@
+
+Running 6 tests using 1 worker
+
+(node:2085) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 [390x844] › tests/e2e/app.spec.ts:14:1 › training queue survives reload, reentry and respects history across sessions (9.0s)
+  ✓  2 [390x844] › tests/e2e/app.spec.ts:63:1 › lesson study is separate from mathematical mastery and unlocks reading (713ms)
+  ✓  3 [390x844] › tests/e2e/app.spec.ts:83:1 › migration retains v1 byte-for-byte and resumes legacy mastery (487ms)
+  ✓  4 [390x844] › tests/e2e/app.spec.ts:115:1 › all six areas, browser navigation, touch controls and layout (6.3s)
+  ✓  5 [390x844] › tests/e2e/app.spec.ts:160:1 › proof accepts swapped independent hypotheses and does not reward repeated verify (1.2s)
+  ✓  6 [390x844] › tests/e2e/app.spec.ts:202:1 › malformed storage remains recoverable and produces a visible message (437ms)
+
+  6 passed (19.1s)

@@ -1,0 +1,38 @@
+
+Running 1 test using 1 worker
+
+(node:1201) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  1 [390x844] › tests/e2e/app.spec.ts:20:1 › lesson study is separate from mathematical mastery and unlocks reading (45.3s)
+
+
+  1) [390x844] › tests/e2e/app.spec.ts:20:1 › lesson study is separate from mathematical mastery and unlocks reading 
+
+    Test timeout of 45000ms exceeded.
+
+    Error: locator.click: Test timeout of 45000ms exceeded.
+    Call log:
+      - waiting for getByRole('button', { name: 'Marcar como estudada' })
+
+
+      18 |  await page.reload();await expect(page.getByTestId('training-question')).toBeVisible();
+      19 | });
+    > 20 | test('lesson study is separate from mathematical mastery and unlocks reading',async({page})=>{await page.goto('/');await enter(page,'Aula');await page.getByRole('button',{name:'Marcar como estudada'}).click();const p=await page.evaluate(k=>JSON.parse(localStorage.getItem(k)!),key);expect(p.mastery.fundamentals??0).toBe(0);expect(p.studiedSkills).toContain('fundamentals');await expect(page.getByRole('button',{name:'Segmentos e ângulos',exact:true})).toBeVisible();await page.reload();await expect(page.getByRole('button',{name:'Seção estudada'})).toBeVisible();});
+         |                                                                                                                                                                                                          ^
+      21 | test('migration retains v1 byte-for-byte and resumes legacy mastery',async({page})=>{const legacy=JSON.stringify({mastery:{fundamentals:45},studiedSections:['fundamentals'],questions:{'q-drawing':{attempts:2,correct:1}},proofAttempts:{},lastSection:'fundamentals',updatedAt:'2026-01-01'});await page.addInitScript(({legacy})=>{if(!localStorage.getItem('geometria-rpg-progress-v1'))localStorage.setItem('geometria-rpg-progress-v1',legacy);},{legacy});await page.goto('/');await enter(page,'Treino');const p=await page.evaluate(k=>JSON.parse(localStorage.getItem(k)!),key);expect(p.mastery.fundamentals).toBe(45);expect(p.questions['q-drawing'].attempts).toBe(2);expect(await page.evaluate(()=>localStorage.getItem('geometria-rpg-progress-v1'))).toBe(legacy);});
+      22 | test('all six areas, browser navigation, touch controls and layout',async({page},info)=>{const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));await page.goto('/');for(const area of ['Mapa','Aula','Treino','Provas','Exercícios','Revisão']){await enter(page,area);await expect(page.locator('main h1')).toBeVisible();const overflow=await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth);expect(overflow,area).toBe(false);await page.screenshot({path:`audit/evidence/${info.project.name}-${area}.png`,fullPage:true});const nav=await page.locator('.bottom-nav').boundingBox();expect(nav).toBeTruthy();await page.evaluate(()=>window.scrollTo(0,document.body.scrollHeight));const buttons=page.locator('main button:visible');for(let i=0;i<await buttons.count();i++){const box=await buttons.nth(i).boundingBox();if(box&&box.y>=0&&box.y+box.height<info.project.use.viewport!.height){expect(box.height,area).toBeGreaterThanOrEqual(40);}}}await page.goBack();await expect(page).toHaveURL(/#exercises/);await page.reload();await expect(page.locator('main h1')).toContainText('Exercícios');expect(errors).toEqual([]);});
+      23 | test('proof accepts swapped independent hypotheses and does not reward repeated verify',async({page})=>{await page.goto('/#proofs');await page.getByRole('button',{name:'Treinar prova'}).click();for(const id of ['opv-2','opv-1','opv-3']){for(let i=0;i<3;i++){const row=page.locator(`[data-step-id="${id}"]`);const up=row.getByRole('button',{name:/para cima/});if(await up.isEnabled())await up.click();}}
+        at /workspace/geometria-production/tests/e2e/app.spec.ts:20:202
+
+    Error Context: test-results/app-lesson-study-is-separa-8aca3-mastery-and-unlocks-reading-390x844/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/app-lesson-study-is-separa-8aca3-mastery-and-unlocks-reading-390x844/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/app-lesson-study-is-separa-8aca3-mastery-and-unlocks-reading-390x844/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    [390x844] › tests/e2e/app.spec.ts:20:1 › lesson study is separate from mathematical mastery and unlocks reading 

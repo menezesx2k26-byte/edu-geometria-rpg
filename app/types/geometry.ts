@@ -42,11 +42,7 @@ export type LessonSection = {
 };
 
 export type ProofStepKind =
-  | "hypothesis"
-  | "construction"
-  | "known-result"
-  | "inference"
-  | "conclusion";
+  "hypothesis" | "construction" | "known-result" | "inference" | "conclusion";
 
 export type ProofStep = {
   id: string;
@@ -54,6 +50,7 @@ export type ProofStep = {
   label: string;
   formula?: string;
   explanation: string;
+  dependsOn: string[];
 };
 
 export type Proof = {
@@ -86,6 +83,9 @@ export type Question = {
   options: string[];
   correctIndex: number;
   explanation: string;
+  category?: "A" | "B" | "C" | "D" | "E" | "F" | "G";
+  figure?: "triangle" | "isosceles" | "median" | "opv" | "ala" | "lal";
+  labels?: string[];
 };
 
 export type ExerciseStep = {
@@ -106,6 +106,7 @@ export type Exercise = {
   introduction: string;
   steps: ExerciseStep[];
   finalAnswer: string;
+  figure?: Question["figure"];
 };
 
 export type ReviewCard = {
@@ -122,9 +123,48 @@ export type ReviewCard = {
 export type QuestionRecord = {
   attempts: number;
   correct: number;
+  errors: number;
+  exposures: number;
+  intervalDays: number;
+  skillId?: string;
+  lastSeen: number | null;
+  lastResult: boolean | null;
+  dueAt: number | null;
+};
+
+export type SessionEntry = {
+  questionId: string;
+  skillId: string;
+  reason: "due-review" | "repair" | "unseen" | "least-seen";
+  priority: number;
+  options: { id: string; text: string }[];
+};
+export type TrainingSession = {
+  id: string;
+  seed: number;
+  createdAt: number;
+  queue: SessionEntry[];
+  index: number;
+  answers: Record<
+    string,
+    { optionId: string; correct: boolean; timestamp: number }
+  >;
+  completed: boolean;
 };
 
 export type UserProgress = {
+  schemaVersion: 2;
+  studiedSkills: string[];
+  review: Record<
+    string,
+    {
+      confidence: "know" | "unsure" | "wrong";
+      dueAt: number;
+      lastReviewed: number;
+    }
+  >;
+  trainingSession: TrainingSession | null;
+  sessionCount: number;
   mastery: Record<string, number>;
   studiedSections: string[];
   questions: Record<string, QuestionRecord>;
@@ -133,4 +173,5 @@ export type UserProgress = {
   updatedAt: string;
 };
 
-export type AppView = "map" | "lesson" | "training" | "proofs" | "exercises" | "review";
+export type AppView =
+  "map" | "lesson" | "training" | "proofs" | "exercises" | "review";

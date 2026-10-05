@@ -1,0 +1,38 @@
+[
+  {
+    "width": 360,
+    "height": 800,
+    "areas": 6,
+    "consoleErrors": [],
+    "failedRequests": [],
+    "horizontalOverflow": false,
+    "mathErrors": 0
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "areas": 6,
+    "consoleErrors": [],
+    "failedRequests": [],
+    "horizontalOverflow": false,
+    "mathErrors": 0
+  },
+  {
+    "width": 412,
+    "height": 915,
+    "areas": 6,
+    "consoleErrors": [],
+    "failedRequests": [],
+    "horizontalOverflow": false,
+    "mathErrors": 0
+  },
+  {
+    "width": 1366,
+    "height": 768,
+    "areas": 6,
+    "consoleErrors": [],
+    "failedRequests": [],
+    "horizontalOverflow": false,
+    "mathErrors": 0
+  }
+]

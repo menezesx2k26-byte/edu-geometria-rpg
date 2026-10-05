@@ -98,3 +98,11 @@ actions tied to the current ChatGPT user. Leave public content anonymous.
 
 - [vinext Documentation](https://github.com/cloudflare/vinext)
 - [Drizzle D1 Guide](https://orm.drizzle.team/docs/get-started/d1-new)
+
+## Auditoria da versão publicada
+
+A branch de correção `fix/production-debug-qa` parte da produção Sites em
+`f639114`, que diverge do GitHub main. Consulte [auditoria e QA](audit/QA_REPORT.md)
+e [instruções de validação](audit/HANDOFF.md) antes de integrar ou publicar.
+O treino usa fila persistida, revisão por prazo/erro/confiança, IDs de alternativas
+e migração v2 que preserva a chave de progresso v1. Estudo não concede domínio.

@@ -42,3 +42,9 @@ yarn-error.log*
 # local development artifacts (keep .openai/hosting.json)
 /.openai/dev*.log
 /.openai/pkgfix/
+
+/playwright-report/
+/test-results/
+*.tsbuildinfo
+/worker-configuration.d.ts
+/audit/evidence/*.png

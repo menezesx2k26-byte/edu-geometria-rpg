@@ -1,0 +1,61 @@
+
+> geometria-rpg@0.1.0 test:e2e
+> playwright test
+
+
+Running 44 tests using 1 worker
+
+(node:6540) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [360x800] › tests/e2e/app.spec.ts:15:1 › training queue survives reload, reentry and respects history across sessions (8.8s)
+  ✓   2 [360x800] › tests/e2e/app.spec.ts:64:1 › lesson study is separate from mathematical mastery and unlocks reading (831ms)
+  ✓   3 [360x800] › tests/e2e/app.spec.ts:84:1 › migration retains v1 byte-for-byte and resumes legacy mastery (478ms)
+  ✓   4 [360x800] › tests/e2e/app.spec.ts:116:1 › all six areas, browser navigation, touch controls and layout (8.3s)
+  ✓   5 [360x800] › tests/e2e/app.spec.ts:165:1 › proof accepts swapped independent hypotheses and does not reward repeated verify (2.5s)
+  ✓   6 [360x800] › tests/e2e/app.spec.ts:207:1 › malformed storage remains recoverable and produces a visible message (666ms)
+  ✓   7 [360x800] › tests/e2e/app.spec.ts:228:1 › unknown newer schema is preserved even when training starts (542ms)
+  ✓   8 [360x800] › tests/e2e/app.spec.ts:248:1 › every exercise step remains answerable and all proof selectors render (13.5s)
+  ✓   9 [360x800] › tests/e2e/app.spec.ts:274:1 › closing and reopening the page retains answer and queue (983ms)
+  ✓  10 [360x800] › tests/e2e/app.spec.ts:301:1 › invalid saved queue is backed up while compatible mastery is recovered (755ms)
+  ✓  11 [360x800] › tests/e2e/app.spec.ts:332:1 › all thirteen skills and shared lesson checkpoints unlock without granting mastery (2.4s)
+(node:6738) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  12 [390x844] › tests/e2e/app.spec.ts:15:1 › training queue survives reload, reentry and respects history across sessions (5.8s)
+  ✓  13 [390x844] › tests/e2e/app.spec.ts:64:1 › lesson study is separate from mathematical mastery and unlocks reading (928ms)
+  ✓  14 [390x844] › tests/e2e/app.spec.ts:84:1 › migration retains v1 byte-for-byte and resumes legacy mastery (563ms)
+  ✓  15 [390x844] › tests/e2e/app.spec.ts:116:1 › all six areas, browser navigation, touch controls and layout (8.1s)
+  ✓  16 [390x844] › tests/e2e/app.spec.ts:165:1 › proof accepts swapped independent hypotheses and does not reward repeated verify (1.3s)
+  ✓  17 [390x844] › tests/e2e/app.spec.ts:207:1 › malformed storage remains recoverable and produces a visible message (532ms)
+  ✓  18 [390x844] › tests/e2e/app.spec.ts:228:1 › unknown newer schema is preserved even when training starts (522ms)
+  ✓  19 [390x844] › tests/e2e/app.spec.ts:248:1 › every exercise step remains answerable and all proof selectors render (3.7s)
+  ✓  20 [390x844] › tests/e2e/app.spec.ts:274:1 › closing and reopening the page retains answer and queue (2.1s)
+  ✓  21 [390x844] › tests/e2e/app.spec.ts:301:1 › invalid saved queue is backed up while compatible mastery is recovered (1.2s)
+  ✓  22 [390x844] › tests/e2e/app.spec.ts:332:1 › all thirteen skills and shared lesson checkpoints unlock without granting mastery (4.5s)
+(node:7016) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  23 [412x915] › tests/e2e/app.spec.ts:15:1 › training queue survives reload, reentry and respects history across sessions (8.7s)
+  ✓  24 [412x915] › tests/e2e/app.spec.ts:64:1 › lesson study is separate from mathematical mastery and unlocks reading (1.0s)
+  ✓  25 [412x915] › tests/e2e/app.spec.ts:84:1 › migration retains v1 byte-for-byte and resumes legacy mastery (498ms)
+  ✓  26 [412x915] › tests/e2e/app.spec.ts:116:1 › all six areas, browser navigation, touch controls and layout (7.7s)
+  ✓  27 [412x915] › tests/e2e/app.spec.ts:165:1 › proof accepts swapped independent hypotheses and does not reward repeated verify (2.4s)
+  ✓  28 [412x915] › tests/e2e/app.spec.ts:207:1 › malformed storage remains recoverable and produces a visible message (582ms)
+  ✓  29 [412x915] › tests/e2e/app.spec.ts:228:1 › unknown newer schema is preserved even when training starts (581ms)
+  ✓  30 [412x915] › tests/e2e/app.spec.ts:248:1 › every exercise step remains answerable and all proof selectors render (2.9s)
+  ✓  31 [412x915] › tests/e2e/app.spec.ts:274:1 › closing and reopening the page retains answer and queue (1.1s)
+  ✓  32 [412x915] › tests/e2e/app.spec.ts:301:1 › invalid saved queue is backed up while compatible mastery is recovered (776ms)
+  ✓  33 [412x915] › tests/e2e/app.spec.ts:332:1 › all thirteen skills and shared lesson checkpoints unlock without granting mastery (2.3s)
+(node:7216) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  34 [1366x768] › tests/e2e/app.spec.ts:15:1 › training queue survives reload, reentry and respects history across sessions (5.2s)
+  ✓  35 [1366x768] › tests/e2e/app.spec.ts:64:1 › lesson study is separate from mathematical mastery and unlocks reading (1.4s)
+  ✓  36 [1366x768] › tests/e2e/app.spec.ts:84:1 › migration retains v1 byte-for-byte and resumes legacy mastery (806ms)
+  ✓  37 [1366x768] › tests/e2e/app.spec.ts:116:1 › all six areas, browser navigation, touch controls and layout (9.3s)
+  ✓  38 [1366x768] › tests/e2e/app.spec.ts:165:1 › proof accepts swapped independent hypotheses and does not reward repeated verify (1.3s)
+  ✓  39 [1366x768] › tests/e2e/app.spec.ts:207:1 › malformed storage remains recoverable and produces a visible message (590ms)
+  ✓  40 [1366x768] › tests/e2e/app.spec.ts:228:1 › unknown newer schema is preserved even when training starts (575ms)
+  ✓  41 [1366x768] › tests/e2e/app.spec.ts:248:1 › every exercise step remains answerable and all proof selectors render (3.3s)
+  ✓  42 [1366x768] › tests/e2e/app.spec.ts:274:1 › closing and reopening the page retains answer and queue (1.1s)
+  ✓  43 [1366x768] › tests/e2e/app.spec.ts:301:1 › invalid saved queue is backed up while compatible mastery is recovered (1.1s)
+  ✓  44 [1366x768] › tests/e2e/app.spec.ts:332:1 › all thirteen skills and shared lesson checkpoints unlock without granting mastery (2.7s)
+
+  44 passed (2.1m)

@@ -1,0 +1,145 @@
+
+Running 6 tests using 1 worker
+
+(node:1366) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  1 [390x844] › tests/e2e/app.spec.ts:5:1 › training queue survives reload, reentry and respects history across sessions (7.2s)
+(node:1487) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  2 [390x844] › tests/e2e/app.spec.ts:20:1 › lesson study is separate from mathematical mastery and unlocks reading (45.3s)
+(node:1683) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  3 [390x844] › tests/e2e/app.spec.ts:21:1 › migration retains v1 byte-for-byte and resumes legacy mastery (1.5s)
+(node:1754) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  4 [390x844] › tests/e2e/app.spec.ts:22:1 › all six areas, browser navigation, touch controls and layout (1.1s)
+(node:1826) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  5 [390x844] › tests/e2e/app.spec.ts:23:1 › proof accepts swapped independent hypotheses and does not reward repeated verify (2.3s)
+  ✓  6 [390x844] › tests/e2e/app.spec.ts:28:1 › malformed storage remains recoverable and produces a visible message (2.1s)
+
+
+  1) [390x844] › tests/e2e/app.spec.ts:5:1 › training queue survives reload, reentry and respects history across sessions 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByTestId('training-question')
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" getByTestId('training-question') with timeout 5000ms
+      - waiting for getByTestId('training-question')
+
+
+       7 |  const ids:string[]=[];let initial='';
+       8 |  for(let i=0;i<10;i++){
+    >  9 |   const card=page.getByTestId('training-question');await expect(card).toBeVisible();const id=(await card.getAttribute('data-question-id'))!;expect(ids).not.toContain(id);ids.push(id);
+         |                                                                       ^
+      10 |   if(i===2){initial=(await page.evaluate(k=>localStorage.getItem(k),key))!;await page.reload();await expect(page.getByTestId('training-question')).toHaveAttribute('data-question-id',id);await enter(page,'Mapa');await enter(page,'Treino');await expect(page.getByTestId('training-question')).toHaveAttribute('data-question-id',id);}
+      11 |   await answer(page);if(i===3){await page.reload();await expect(card.locator('.options button').first()).toBeDisabled();}
+      12 |   await page.getByTestId('training-next').click();
+        at /workspace/geometria-production/tests/e2e/app.spec.ts:9:71
+
+    Error Context: test-results/app-training-queue-survive-7ad4e-cts-history-across-sessions-390x844/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/app-training-queue-survive-7ad4e-cts-history-across-sessions-390x844/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/app-training-queue-survive-7ad4e-cts-history-across-sessions-390x844/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [390x844] › tests/e2e/app.spec.ts:20:1 › lesson study is separate from mathematical mastery and unlocks reading 
+
+    Test timeout of 45000ms exceeded.
+
+    Error: locator.click: Test timeout of 45000ms exceeded.
+    Call log:
+      - waiting for getByRole('button', { name: 'Marcar como estudada' })
+
+
+      18 |  await page.reload();await expect(page.getByTestId('training-question')).toBeVisible();
+      19 | });
+    > 20 | test('lesson study is separate from mathematical mastery and unlocks reading',async({page})=>{await page.goto('/');await enter(page,'Aula');await page.getByRole('button',{name:'Marcar como estudada'}).click();const p=await page.evaluate(k=>JSON.parse(localStorage.getItem(k)!),key);expect(p.mastery.fundamentals??0).toBe(0);expect(p.studiedSkills).toContain('fundamentals');await expect(page.getByRole('button',{name:'Segmentos e ângulos',exact:true})).toBeVisible();await page.reload();await expect(page.getByRole('button',{name:'Seção estudada'})).toBeVisible();});
+         |                                                                                                                                                                                                          ^
+      21 | test('migration retains v1 byte-for-byte and resumes legacy mastery',async({page})=>{const legacy=JSON.stringify({mastery:{fundamentals:45},studiedSections:['fundamentals'],questions:{'q-drawing':{attempts:2,correct:1}},proofAttempts:{},lastSection:'fundamentals',updatedAt:'2026-01-01'});await page.addInitScript(({legacy})=>{if(!localStorage.getItem('geometria-rpg-progress-v1'))localStorage.setItem('geometria-rpg-progress-v1',legacy);},{legacy});await page.goto('/');await enter(page,'Treino');const p=await page.evaluate(k=>JSON.parse(localStorage.getItem(k)!),key);expect(p.mastery.fundamentals).toBe(45);expect(p.questions['q-drawing'].attempts).toBe(2);expect(await page.evaluate(()=>localStorage.getItem('geometria-rpg-progress-v1'))).toBe(legacy);});
+      22 | test('all six areas, browser navigation, touch controls and layout',async({page},info)=>{const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));await page.goto('/');for(const area of ['Mapa','Aula','Treino','Provas','Exercícios','Revisão']){await enter(page,area);await expect(page.locator('main h1').first()).toBeVisible();const overflow=await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth);expect(overflow,area).toBe(false);await page.screenshot({path:`audit/evidence/${info.project.name}-${area}.png`,fullPage:true});const nav=await page.locator('.bottom-nav').boundingBox();expect(nav).toBeTruthy();await page.evaluate(()=>window.scrollTo(0,document.body.scrollHeight));const buttons=page.locator('main button:visible');for(let i=0;i<await buttons.count();i++){const box=await buttons.nth(i).boundingBox();if(box&&box.y>=0&&box.y+box.height<info.project.use.viewport!.height){expect(box.height,area).toBeGreaterThanOrEqual(40);}}}await page.goBack();await expect(page).toHaveURL(/#exercises/);await page.reload();await expect(page.locator('main h1')).toContainText('Exercícios');expect(errors).toEqual([]);});
+      23 | test('proof accepts swapped independent hypotheses and does not reward repeated verify',async({page})=>{await page.goto('/#proofs');await page.locator('[data-progress-ready="true"]').waitFor();await page.getByRole('button',{name:'Treinar prova'}).click();for(const id of ['opv-2','opv-1','opv-3']){for(let i=0;i<3;i++){const row=page.locator(`[data-step-id="${id}"]`);const up=row.getByRole('button',{name:/para cima/});if(await up.isEnabled())await up.click();}}
+        at /workspace/geometria-production/tests/e2e/app.spec.ts:20:202
+
+    Error Context: test-results/app-lesson-study-is-separa-8aca3-mastery-and-unlocks-reading-390x844/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/app-lesson-study-is-separa-8aca3-mastery-and-unlocks-reading-390x844/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/app-lesson-study-is-separa-8aca3-mastery-and-unlocks-reading-390x844/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) [390x844] › tests/e2e/app.spec.ts:21:1 › migration retains v1 byte-for-byte and resumes legacy mastery 
+
+    TypeError: Cannot read properties of null (reading 'mastery')
+
+      19 | });
+      20 | test('lesson study is separate from mathematical mastery and unlocks reading',async({page})=>{await page.goto('/');await enter(page,'Aula');await page.getByRole('button',{name:'Marcar como estudada'}).click();const p=await page.evaluate(k=>JSON.parse(localStorage.getItem(k)!),key);expect(p.mastery.fundamentals??0).toBe(0);expect(p.studiedSkills).toContain('fundamentals');await expect(page.getByRole('button',{name:'Segmentos e ângulos',exact:true})).toBeVisible();await page.reload();await expect(page.getByRole('button',{name:'Seção estudada'})).toBeVisible();});
+    > 21 | test('migration retains v1 byte-for-byte and resumes legacy mastery',async({page})=>{const legacy=JSON.stringify({mastery:{fundamentals:45},studiedSections:['fundamentals'],questions:{'q-drawing':{attempts:2,correct:1}},proofAttempts:{},lastSection:'fundamentals',updatedAt:'2026-01-01'});await page.addInitScript(({legacy})=>{if(!localStorage.getItem('geometria-rpg-progress-v1'))localStorage.setItem('geometria-rpg-progress-v1',legacy);},{legacy});await page.goto('/');await enter(page,'Treino');const p=await page.evaluate(k=>JSON.parse(localStorage.getItem(k)!),key);expect(p.mastery.fundamentals).toBe(45);expect(p.questions['q-drawing'].attempts).toBe(2);expect(await page.evaluate(()=>localStorage.getItem('geometria-rpg-progress-v1'))).toBe(legacy);});
+         |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     ^
+      22 | test('all six areas, browser navigation, touch controls and layout',async({page},info)=>{const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));await page.goto('/');for(const area of ['Mapa','Aula','Treino','Provas','Exercícios','Revisão']){await enter(page,area);await expect(page.locator('main h1').first()).toBeVisible();const overflow=await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth);expect(overflow,area).toBe(false);await page.screenshot({path:`audit/evidence/${info.project.name}-${area}.png`,fullPage:true});const nav=await page.locator('.bottom-nav').boundingBox();expect(nav).toBeTruthy();await page.evaluate(()=>window.scrollTo(0,document.body.scrollHeight));const buttons=page.locator('main button:visible');for(let i=0;i<await buttons.count();i++){const box=await buttons.nth(i).boundingBox();if(box&&box.y>=0&&box.y+box.height<info.project.use.viewport!.height){expect(box.height,area).toBeGreaterThanOrEqual(40);}}}await page.goBack();await expect(page).toHaveURL(/#exercises/);await page.reload();await expect(page.locator('main h1')).toContainText('Exercícios');expect(errors).toEqual([]);});
+      23 | test('proof accepts swapped independent hypotheses and does not reward repeated verify',async({page})=>{await page.goto('/#proofs');await page.locator('[data-progress-ready="true"]').waitFor();await page.getByRole('button',{name:'Treinar prova'}).click();for(const id of ['opv-2','opv-1','opv-3']){for(let i=0;i<3;i++){const row=page.locator(`[data-step-id="${id}"]`);const up=row.getByRole('button',{name:/para cima/});if(await up.isEnabled())await up.click();}}
+      24 |  // Set a valid dependency order using visible moves (not injected application state).
+        at /workspace/geometria-production/tests/e2e/app.spec.ts:21:581
+
+    Error Context: test-results/app-migration-retains-v1-b-9c2b8--and-resumes-legacy-mastery-390x844/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/app-migration-retains-v1-b-9c2b8--and-resumes-legacy-mastery-390x844/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/app-migration-retains-v1-b-9c2b8--and-resumes-legacy-mastery-390x844/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  4) [390x844] › tests/e2e/app.spec.ts:22:1 › all six areas, browser navigation, touch controls and layout 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: locator('main h1')
+    Expected: visible
+    Error: strict mode violation: locator('main h1') resolved to 2 elements:
+        1) <h1>…</h1> aka getByRole('heading', { name: 'Construa a teoria. Prove os' })
+        2) <h1>A teoria tem uma ordem</h1> aka getByRole('heading', { name: 'A teoria tem uma ordem' })
+
+    Call log:
+      - Expect "toBeVisible" locator('main h1') with timeout 5000ms
+      - waiting for locator('main h1')
+
+
+      20 | test('lesson study is separate from mathematical mastery and unlocks reading',async({page})=>{await page.goto('/');await enter(page,'Aula');await page.getByRole('button',{name:'Marcar como estudada'}).click();const p=await page.evaluate(k=>JSON.parse(localStorage.getItem(k)!),key);expect(p.mastery.fundamentals??0).toBe(0);expect(p.studiedSkills).toContain('fundamentals');await expect(page.getByRole('button',{name:'Segmentos e ângulos',exact:true})).toBeVisible();await page.reload();await expect(page.getByRole('button',{name:'Seção estudada'})).toBeVisible();});
+      21 | test('migration retains v1 byte-for-byte and resumes legacy mastery',async({page})=>{const legacy=JSON.stringify({mastery:{fundamentals:45},studiedSections:['fundamentals'],questions:{'q-drawing':{attempts:2,correct:1}},proofAttempts:{},lastSection:'fundamentals',updatedAt:'2026-01-01'});await page.addInitScript(({legacy})=>{if(!localStorage.getItem('geometria-rpg-progress-v1'))localStorage.setItem('geometria-rpg-progress-v1',legacy);},{legacy});await page.goto('/');await enter(page,'Treino');const p=await page.evaluate(k=>JSON.parse(localStorage.getItem(k)!),key);expect(p.mastery.fundamentals).toBe(45);expect(p.questions['q-drawing'].attempts).toBe(2);expect(await page.evaluate(()=>localStorage.getItem('geometria-rpg-progress-v1'))).toBe(legacy);});
+    > 22 | test('all six areas, browser navigation, touch controls and layout',async({page},info)=>{const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));await page.goto('/');for(const area of ['Mapa','Aula','Treino','Provas','Exercícios','Revisão']){await enter(page,area);await expect(page.locator('main h1').first()).toBeVisible();const overflow=await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth);expect(overflow,area).toBe(false);await page.screenshot({path:`audit/evidence/${info.project.name}-${area}.png`,fullPage:true});const nav=await page.locator('.bottom-nav').boundingBox();expect(nav).toBeTruthy();await page.evaluate(()=>window.scrollTo(0,document.body.scrollHeight));const buttons=page.locator('main button:visible');for(let i=0;i<await buttons.count();i++){const box=await buttons.nth(i).boundingBox();if(box&&box.y>=0&&box.y+box.height<info.project.use.viewport!.height){expect(box.height,area).toBeGreaterThanOrEqual(40);}}}await page.goBack();await expect(page).toHaveURL(/#exercises/);await page.reload();await expect(page.locator('main h1')).toContainText('Exercícios');expect(errors).toEqual([]);});
+         |                                                                                                                                                                                                                                                                                                                                ^
+      23 | test('proof accepts swapped independent hypotheses and does not reward repeated verify',async({page})=>{await page.goto('/#proofs');await page.locator('[data-progress-ready="true"]').waitFor();await page.getByRole('button',{name:'Treinar prova'}).click();for(const id of ['opv-2','opv-1','opv-3']){for(let i=0;i<3;i++){const row=page.locator(`[data-step-id="${id}"]`);const up=row.getByRole('button',{name:/para cima/});if(await up.isEnabled())await up.click();}}
+      24 |  // Set a valid dependency order using visible moves (not injected application state).
+      25 |  const desired=['opv-2','opv-1','opv-3','opv-4'];for(let target=0;target<desired.length;target++){let order=await page.locator('[data-step-id]').evaluateAll(nodes=>nodes.map(n=>n.getAttribute('data-step-id')));while(order.indexOf(desired[target])>target){await page.locator(`[data-step-id="${desired[target]}"]`).getByRole('button',{name:/para cima/}).click();order=await page.locator('[data-step-id]').evaluateAll(nodes=>nodes.map(n=>n.getAttribute('data-step-id')));}}
+        at /workspace/geometria-production/tests/e2e/app.spec.ts:22:320
+
+    Error Context: test-results/app-all-six-areas-browser--5ffaf-n-touch-controls-and-layout-390x844/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/app-all-six-areas-browser--5ffaf-n-touch-controls-and-layout-390x844/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/app-all-six-areas-browser--5ffaf-n-touch-controls-and-layout-390x844/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  4 failed
+    [390x844] › tests/e2e/app.spec.ts:5:1 › training queue survives reload, reentry and respects history across sessions 
+    [390x844] › tests/e2e/app.spec.ts:20:1 › lesson study is separate from mathematical mastery and unlocks reading 
+    [390x844] › tests/e2e/app.spec.ts:21:1 › migration retains v1 byte-for-byte and resumes legacy mastery 
+    [390x844] › tests/e2e/app.spec.ts:22:1 › all six areas, browser navigation, touch controls and layout 
+  2 passed (1.1m)

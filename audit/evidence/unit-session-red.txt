@@ -1,0 +1,48 @@
+
+> geometria-rpg@0.1.0 test:unit
+> node --test tests/engine.test.mjs
+
+✔ scheduler selects ten distinct and uses remaining unseen questions next session (8.588069ms)
+✔ small and empty eligible pools terminate without early duplicate (0.283706ms)
+✔ due review and wrong/low confidence are pedagogical priorities (0.641418ms)
+✔ exhausted pool prefers least exposures; queues deterministic for same state and seed (1.925533ms)
+✔ Fisher–Yates options preserve correct ID through every permutation (19.037892ms)
+✔ answer/advance survives JSON reload and double submissions do not grant extra evidence (1.247042ms)
+✔ study and confidence cannot award mastery; repeated answer cannot farm mastery (0.281735ms)
+✔ migration preserves compatible v1 progress, counts and maps studied skill (0.380828ms)
+✔ migration rejects invalid containers and unknown future versions (0.666722ms)
+✔ proof accepts independent hypothesis order, rejects causal jump, omission and duplicate (0.454235ms)
+✔ review deadline at skill level prioritizes a previously successful concept (0.782851ms)
+✔ clamps mastery after wrong answers and repeated proofs cannot farm evidence (0.53626ms)
+✔ bank IDs, classifications, all skill coverage, generated OPV answers and causal proof orders (5.319729ms)
+✔ spaced retrieval can improve mastery without immediate-repeat farming or stretching deadlines (0.224583ms)
+✔ large numeric variant families do not crowd out other skills and reasoning forms (1.518859ms)
+✖ migration rejects sessions that would freeze training or contain unrelated answers (9.342277ms)
+ℹ tests 16
+ℹ suites 0
+ℹ pass 15
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 295.852415
+
+✖ failing tests:
+
+test at tests/engine.test.mjs:234:1
+✖ migration rejects sessions that would freeze training or contain unrelated answers (9.342277ms)
+  AssertionError [ERR_ASSERTION]: Missing expected exception.
+      at TestContext.<anonymous> (file:///workspace/geometria-production/tests/engine.test.mjs:237:34)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: undefined,
+    operator: 'throws',
+    diff: 'simple'
+  }
