@@ -86,3 +86,25 @@ test('V/F requires a reason, hints persist before submission, opening grants no 
   expect(state.evaluationSession.attempts.at(-1).independence).toBeLessThan(1);
   expect(state.evaluationSession.attempts.at(-1).response).toHaveLength(2);
 });
+
+
+test('validating an answer keeps the evaluation scroll position', async ({ page }) => {
+  await page.goto('/#avaliacao-ifsp');
+  await page.getByRole('button', { name: 'Começar prática' }).click();
+
+  const step = getEvaluationSteps(0, 0)[0]!;
+  for (const answer of step.answer) {
+    await page.getByRole('button', { name: answer, exact: true }).click();
+  }
+
+  const submit = page.getByRole('button', { name: 'Validar resposta', exact: true });
+  await submit.evaluate((element) => element.scrollIntoView({ block: 'center', behavior: 'auto' }));
+  const beforeSubmit = await page.evaluate(() => window.scrollY);
+  expect(beforeSubmit).toBeGreaterThan(100);
+
+  await submit.click();
+  await expect(page.getByText('Passo validado', { exact: true })).toBeVisible();
+
+  const afterSubmit = await page.evaluate(() => window.scrollY);
+  expect(afterSubmit).toBeGreaterThan(beforeSubmit - 80);
+});

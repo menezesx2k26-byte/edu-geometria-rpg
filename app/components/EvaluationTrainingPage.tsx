@@ -13,7 +13,7 @@ export function EvaluationTrainingPage({ controller, onMap }: { controller: Pick
   useEffect(() => {
     if (!session) saveEvaluationSession(createEvaluationSession(crypto.randomUUID()));
   }, [session, saveEvaluationSession]);
-  useEffect(() => { heading.current?.focus(); }, [session?.currentChallengeId, session?.phase]);
+  useEffect(() => { heading.current?.focus({ preventScroll: true }); }, [session?.currentChallengeId, session?.phase]);
   if (!session) return <p role="status">Abrindo sua trilha…</p>;
   const node = evaluationNodes[session.nodeIndex]!;
   const steps = getEvaluationSteps(session.nodeIndex, session.variant);
