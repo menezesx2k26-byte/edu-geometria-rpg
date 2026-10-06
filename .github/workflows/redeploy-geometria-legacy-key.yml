@@ -1,0 +1,59 @@
+name: One-shot geometria deploy legacy-key fallback
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/redeploy-geometria-legacy-key.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      CLOUDFLARE_API_KEY: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+    steps:
+      - name: Resolve account email without hardcoding
+        shell: bash
+        run: |
+          set -euo pipefail
+          EMAIL="$(jq -r '.head_commit.author.email // empty' "$GITHUB_EVENT_PATH")"
+          test -n "$EMAIL" || { echo "No commit author email available"; exit 2; }
+          echo "CLOUDFLARE_EMAIL=$EMAIL" >> "$GITHUB_ENV"
+
+      - name: Checkout deployment commit
+        uses: actions/checkout@v4
+        with:
+          ref: a972ce5c5f3963b70d5120e4323342bd84730006
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.23.3'
+          cache: npm
+
+      - name: Install
+        run: npm ci --no-audit --no-fund
+
+      - name: Unit tests
+        run: npm run test:unit
+
+      - name: Build
+        run: npm run build
+
+      - name: Validate Cloudflare legacy-key authentication
+        run: npx wrangler whoami
+
+      - name: Deploy to Cloudflare Workers
+        run: npm run deploy:cloudflare
+
+      - name: Verify live HTTP
+        shell: bash
+        run: |
+          status="$(curl -sS -o /tmp/geometria.html -w '%{http_code}' https://geometria-rpg.menezesx2k25.workers.dev/)"
+          test "$status" = "200" || { echo "Worker returned HTTP $status"; exit 3; }
+          echo "LIVE_HTTP_STATUS=$status"
