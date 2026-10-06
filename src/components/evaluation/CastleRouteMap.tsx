@@ -21,7 +21,7 @@ export function CastleRouteMap({ questions, activeQuestionId }: CastleRouteMapPr
               aria-current={current ? 'step' : undefined}
             >
               <span aria-hidden="true">{index + 1}</span>
-              <strong>{question.room.name}</strong>
+              <strong aria-current={current ? 'step' : undefined}>{question.room.name}</strong>
               <small>{completed ? 'concluída' : current ? 'agora' : 'depois'}</small>
             </li>
           );
