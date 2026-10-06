@@ -22,6 +22,7 @@ const CorrespondenceLessonPage = lazy(() => import('./pages/CorrespondenceLesson
 const DidacticLessonPage = lazy(() => import('./pages/DidacticLessonPage').then((module) => ({ default: module.DidacticLessonPage })));
 const ProfilePage = lazy(() => import('./pages/ProfilePage').then((module) => ({ default: module.ProfilePage })));
 const AchievementsPage = lazy(() => import('./pages/AchievementsPage').then((module) => ({ default: module.AchievementsPage })));
+const EvaluationTrainingPage = lazy(() => import('./pages/EvaluationTrainingPage').then((module) => ({ default: module.EvaluationTrainingPage })));
 
 function PageLoader() {
   return <div className="page-loader" role="status" aria-live="polite">Abrindo território…</div>;
@@ -97,6 +98,7 @@ export function App() {
             <Route path="codex" element={<CodexPage />} />
             <Route path="codex/:id" element={<CodexPage />} />
             <Route path="training" element={<TrainingPage />} />
+            <Route path="avaliacao-ifsp" element={<EvaluationTrainingPage />} />
             <Route path="proof/:id" element={<ProofPage />} />
             <Route path="microquest/:id" element={<MicroquestPage />} />
             <Route path="campaign/euclidean" element={<CampaignPage />} />
