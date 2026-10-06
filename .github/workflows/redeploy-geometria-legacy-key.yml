@@ -1,4 +1,4 @@
-name: One-shot geometria deploy legacy-key fallback
+name: One-shot geometria deploy normalized-token fallback
 
 on:
   push:
@@ -14,16 +14,20 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     timeout-minutes: 20
-    env:
-      CLOUDFLARE_API_KEY: ${{ secrets.CLOUDFLARE_API_TOKEN }}
     steps:
-      - name: Resolve account email without hardcoding
+      - name: Normalize stored Cloudflare token without exposing it
         shell: bash
+        env:
+          RAW_CLOUDFLARE_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
         run: |
           set -euo pipefail
-          EMAIL="$(jq -r '.head_commit.author.email // empty' "$GITHUB_EVENT_PATH")"
-          test -n "$EMAIL" || { echo "No commit author email available"; exit 2; }
-          echo "CLOUDFLARE_EMAIL=$EMAIL" >> "$GITHUB_ENV"
+          token="$(printf '%s' "$RAW_CLOUDFLARE_TOKEN" | tr -d '\r\n' | sed -E 's/^[[:space:]]+//; s/[[:space:]]+$//; s/^[Bb]earer[[:space:]]+//; s/^CLOUDFLARE_API_TOKEN=//; s/^["'\'' ]+//; s/["'\'' ]+$//')"
+          test -n "$token" || { echo "Normalized token is empty"; exit 2; }
+          {
+            echo "CLOUDFLARE_API_TOKEN<<CF_TOKEN_EOF"
+            printf '%s\n' "$token"
+            echo "CF_TOKEN_EOF"
+          } >> "$GITHUB_ENV"
 
       - name: Checkout deployment commit
         uses: actions/checkout@v4
@@ -45,7 +49,7 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Validate Cloudflare legacy-key authentication
+      - name: Validate Cloudflare token
         run: npx wrangler whoami
 
       - name: Deploy to Cloudflare Workers
