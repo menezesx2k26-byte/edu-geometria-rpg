@@ -72,6 +72,16 @@ export function TrainingPage() {
         <p>Filtre por disciplina, atividade, origem e pelos seus erros. Abrir teoria não aumenta domínio; somente decisões matemáticas registradas contam.</p>
       </div>
 
+      <article className="training-card" style={{ marginTop: 22 }}>
+        <small>Prioridade agora · 1ª Avaliação IFSP</small>
+        <h2>Treino da avaliação — trilha única</h2>
+        <p>Seis famílias da prova antiga em sequência fixa. Você nunca fica preso numa questão: as erradas voltam apenas no fechamento da rodada.</p>
+        <span className="training-skill">V/F · paralelogramo · desigualdade · cevianas · semelhança · isósceles</span>
+        <div>
+          <Link className="primary-action" to="/avaliacao-ifsp"><FlaskConical size={16} /> Começar agora <ArrowRight size={16} /></Link>
+        </div>
+      </article>
+
       <section className="training-filters" aria-label="Filtros de treino">
         <header><SlidersHorizontal size={18} /><strong>Filtros</strong><span>{items.length} atividades</span></header>
         <div><small>Disciplina</small>{(['all','euclidean','analytical','hybrid'] as Discipline[]).map((value) => <button type="button" key={value} className={discipline === value ? 'is-active' : ''} onClick={() => setDiscipline(value)}>{labels[value]}</button>)}</div>
