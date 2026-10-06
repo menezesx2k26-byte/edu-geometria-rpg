@@ -637,7 +637,7 @@ For widths `360`, `390`, `412` at height `844`:
 - navigate to Q2 or seed session storage to Q2;
 - assert `document.documentElement.scrollWidth - clientWidth <= 1`;
 - assert the SVG is fully inside the viewport width;
-- assert anchor buttons and primary actions have a bounding-box height of at least 42 px;
+- assert anchor buttons and primary actions have a bounding-box height of at least 44 px;
 - assert no room label is clipped from the route map.
 
 - [ ] **Step 6: Run the focused acceptance suite**
