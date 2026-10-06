@@ -28,6 +28,7 @@ export function TrainingPage({ progress, onBegin, onAnswer, onNext }: Props) {
         title="Recordar antes de reler"
         description="Responda com base nas hipóteses. Questões novas e revisões orientam sua jornada."
       />
+      <a className="evaluation-entry" href="#avaliacao-ifsp"><span><small>1ª Avaliação · IFSP</small><strong>Continuar treino da avaliação — trilha única</strong></span><ArrowRight/></a>
       {!session ? (
         <p role="status">Preparando treino…</p>
       ) : session.completed ? (

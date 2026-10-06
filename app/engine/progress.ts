@@ -1,5 +1,6 @@
 import type { QuestionRecord, UserProgress } from "../types/geometry";
 import { lessons, skills } from "../content/geometry.ts";
+import { validateEvaluationSession } from './evaluation.ts';
 
 export const initialProgress: UserProgress = {
   schemaVersion: 2,
@@ -33,6 +34,7 @@ const time = (v: unknown) =>
   typeof v === "number" && Number.isFinite(v) && v >= 0 ? v : null;
 export function migrateProgress(raw: unknown): UserProgress {
   if (!object(raw)) throw new Error("Formato de progresso inválido");
+  if (raw.evaluationSession !== undefined && !validateEvaluationSession(raw.evaluationSession)) throw new Error('Sessão da avaliação inválida');
   if (
     raw.schemaVersion !== undefined &&
     raw.schemaVersion !== 1 &&

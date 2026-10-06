@@ -1,0 +1,46 @@
+[
+  {
+    "width": 360,
+    "state": "content",
+    "overflow": false,
+    "violations": []
+  },
+  {
+    "width": 360,
+    "state": "feedback",
+    "violations": []
+  },
+  {
+    "width": 390,
+    "state": "content",
+    "overflow": false,
+    "violations": []
+  },
+  {
+    "width": 390,
+    "state": "feedback",
+    "violations": []
+  },
+  {
+    "width": 412,
+    "state": "content",
+    "overflow": false,
+    "violations": []
+  },
+  {
+    "width": 412,
+    "state": "feedback",
+    "violations": []
+  },
+  {
+    "width": 1366,
+    "state": "content",
+    "overflow": false,
+    "violations": []
+  },
+  {
+    "width": 1366,
+    "state": "feedback",
+    "violations": []
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "label": "0-primary",
+    "violations": [],
+    "overflow": false
+  },
+  {
+    "label": "1-primary",
+    "violations": [],
+    "overflow": false
+  },
+  {
+    "label": "1-altitude-0",
+    "violations": [],
+    "overflow": false
+  },
+  {
+    "label": "1-altitude-1",
+    "violations": [],
+    "overflow": false
+  },
+  {
+    "label": "2-primary",
+    "violations": [],
+    "overflow": false
+  },
+  {
+    "label": "3-primary",
+    "violations": [],
+    "overflow": false
+  },
+  {
+    "label": "4-primary",
+    "violations": [],
+    "overflow": false
+  },
+  {
+    "label": "5-primary",
+    "violations": [],
+    "overflow": false
+  }
+]

@@ -1,0 +1,76 @@
+
+Running 52 tests using 2 workers
+
+
+
+(node:22984) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:14644) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/52] [360x800] › tests\e2e\evaluation-trail.spec.ts:9:1 › complete IFSP campaign with persistence, mastery and transfer
+[2/52] [360x800] › tests\e2e\app.spec.ts:15:1 › training queue survives reload, reentry and respects history across sessions
+[3/52] [360x800] › tests\e2e\app.spec.ts:64:1 › lesson study is separate from mathematical mastery and unlocks reading
+[4/52] [360x800] › tests\e2e\app.spec.ts:84:1 › migration retains v1 byte-for-byte and resumes legacy mastery
+[5/52] [360x800] › tests\e2e\app.spec.ts:116:1 › all six areas, browser navigation, touch controls and layout
+[6/52] [360x800] › tests\e2e\app.spec.ts:165:1 › proof accepts swapped independent hypotheses and does not reward repeated verify
+[7/52] [360x800] › tests\e2e\app.spec.ts:207:1 › malformed storage remains recoverable and produces a visible message
+[8/52] [360x800] › tests\e2e\app.spec.ts:228:1 › unknown newer schema is preserved even when training starts
+[9/52] [360x800] › tests\e2e\app.spec.ts:248:1 › every exercise step remains answerable and all proof selectors render
+[10/52] [360x800] › tests\e2e\app.spec.ts:274:1 › closing and reopening the page retains answer and queue
+[11/52] [360x800] › tests\e2e\app.spec.ts:301:1 › invalid saved queue is backed up while compatible mastery is recovered
+[12/52] [360x800] › tests\e2e\app.spec.ts:332:1 › all thirteen skills and shared lesson checkpoints unlock without granting mastery
+(node:12780) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+[13/52] [390x844] › tests\e2e\app.spec.ts:15:1 › training queue survives reload, reentry and respects history across sessions
+[14/52] [390x844] › tests\e2e\app.spec.ts:64:1 › lesson study is separate from mathematical mastery and unlocks reading
+[15/52] [390x844] › tests\e2e\app.spec.ts:84:1 › migration retains v1 byte-for-byte and resumes legacy mastery
+[16/52] [390x844] › tests\e2e\app.spec.ts:116:1 › all six areas, browser navigation, touch controls and layout
+[17/52] [390x844] › tests\e2e\app.spec.ts:165:1 › proof accepts swapped independent hypotheses and does not reward repeated verify
+[18/52] [390x844] › tests\e2e\app.spec.ts:207:1 › malformed storage remains recoverable and produces a visible message
+[19/52] [390x844] › tests\e2e\app.spec.ts:228:1 › unknown newer schema is preserved even when training starts
+[20/52] [390x844] › tests\e2e\app.spec.ts:248:1 › every exercise step remains answerable and all proof selectors render
+[21/52] [390x844] › tests\e2e\app.spec.ts:274:1 › closing and reopening the page retains answer and queue
+[22/52] [390x844] › tests\e2e\app.spec.ts:301:1 › invalid saved queue is backed up while compatible mastery is recovered
+[23/52] [390x844] › tests\e2e\app.spec.ts:332:1 › all thirteen skills and shared lesson checkpoints unlock without granting mastery
+[24/52] [390x844] › tests\e2e\evaluation-trail.spec.ts:9:1 › complete IFSP campaign with persistence, mastery and transfer
+[25/52] [360x800] › tests\e2e\evaluation-trail.spec.ts:75:1 › V/F requires a reason, hints persist before submission, opening grants no evidence
+
+
+(node:23372) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[26/52] [412x915] › tests\e2e\app.spec.ts:15:1 › training queue survives reload, reentry and respects history across sessions
+[27/52] [412x915] › tests\e2e\app.spec.ts:64:1 › lesson study is separate from mathematical mastery and unlocks reading
+[28/52] [412x915] › tests\e2e\app.spec.ts:84:1 › migration retains v1 byte-for-byte and resumes legacy mastery
+[29/52] [412x915] › tests\e2e\app.spec.ts:116:1 › all six areas, browser navigation, touch controls and layout
+[30/52] [412x915] › tests\e2e\app.spec.ts:165:1 › proof accepts swapped independent hypotheses and does not reward repeated verify
+[31/52] [412x915] › tests\e2e\app.spec.ts:207:1 › malformed storage remains recoverable and produces a visible message
+[32/52] [412x915] › tests\e2e\app.spec.ts:228:1 › unknown newer schema is preserved even when training starts
+[33/52] [412x915] › tests\e2e\app.spec.ts:248:1 › every exercise step remains answerable and all proof selectors render
+[34/52] [412x915] › tests\e2e\app.spec.ts:274:1 › closing and reopening the page retains answer and queue
+[35/52] [412x915] › tests\e2e\app.spec.ts:301:1 › invalid saved queue is backed up while compatible mastery is recovered
+[36/52] [412x915] › tests\e2e\app.spec.ts:332:1 › all thirteen skills and shared lesson checkpoints unlock without granting mastery
+[37/52] [412x915] › tests\e2e\evaluation-trail.spec.ts:9:1 › complete IFSP campaign with persistence, mastery and transfer
+[38/52] [390x844] › tests\e2e\evaluation-trail.spec.ts:75:1 › V/F requires a reason, hints persist before submission, opening grants no evidence
+
+
+(node:14504) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[39/52] [1366x768] › tests\e2e\app.spec.ts:15:1 › training queue survives reload, reentry and respects history across sessions
+[40/52] [1366x768] › tests\e2e\app.spec.ts:64:1 › lesson study is separate from mathematical mastery and unlocks reading
+[41/52] [1366x768] › tests\e2e\app.spec.ts:84:1 › migration retains v1 byte-for-byte and resumes legacy mastery
+[42/52] [1366x768] › tests\e2e\app.spec.ts:116:1 › all six areas, browser navigation, touch controls and layout
+[43/52] [1366x768] › tests\e2e\app.spec.ts:165:1 › proof accepts swapped independent hypotheses and does not reward repeated verify
+[44/52] [1366x768] › tests\e2e\app.spec.ts:207:1 › malformed storage remains recoverable and produces a visible message
+[45/52] [1366x768] › tests\e2e\app.spec.ts:228:1 › unknown newer schema is preserved even when training starts
+[46/52] [1366x768] › tests\e2e\app.spec.ts:248:1 › every exercise step remains answerable and all proof selectors render
+[47/52] [1366x768] › tests\e2e\app.spec.ts:274:1 › closing and reopening the page retains answer and queue
+[48/52] [1366x768] › tests\e2e\app.spec.ts:301:1 › invalid saved queue is backed up while compatible mastery is recovered
+[49/52] [1366x768] › tests\e2e\app.spec.ts:332:1 › all thirteen skills and shared lesson checkpoints unlock without granting mastery
+[50/52] [1366x768] › tests\e2e\evaluation-trail.spec.ts:9:1 › complete IFSP campaign with persistence, mastery and transfer
+[51/52] [412x915] › tests\e2e\evaluation-trail.spec.ts:75:1 › V/F requires a reason, hints persist before submission, opening grants no evidence
+[52/52] [1366x768] › tests\e2e\evaluation-trail.spec.ts:75:1 › V/F requires a reason, hints persist before submission, opening grants no evidence
+  52 passed (5.9m)

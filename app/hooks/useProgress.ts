@@ -17,6 +17,8 @@ import {
   startSession,
 } from "../engine/training";
 import { questions } from "../content/exercises";
+import type { EvaluationSession } from '../types/evaluation';
+import { recordEvaluationResponse } from '../engine/evaluation';
 
 export const STORAGE_KEY = "geometria-rpg-progress-v2";
 const LEGACY_KEY = "geometria-rpg-progress-v1";
@@ -62,7 +64,7 @@ export function useProgress() {
                 !Array.isArray(parsed)
               ) {
                 // An invalid queue must not discard otherwise compatible learning evidence.
-                next = migrateProgress({ ...parsed, trainingSession: null });
+                next = migrateProgress({ ...parsed, trainingSession: null, evaluationSession: undefined });
               }
             } catch {
               /* The original data remains in the backup or legacy key. */
@@ -106,6 +108,10 @@ export function useProgress() {
       update((p) => studyProgress(p, section, skill, Date.now())),
     [update],
   );
+  const saveEvaluationSession = useCallback((session: EvaluationSession) =>
+    update(p => ({ ...p, evaluationSession: session })), [update]);
+  const submitEvaluationResponse = useCallback((response: string[]) =>
+    update(p => recordEvaluationResponse(p, response, Date.now())), [update]);
   const recordQuestion = useCallback(
     (id: string, skill: string, correct: boolean) =>
       update((p) => recordAnswer(p, id, skill, correct, Date.now())),
@@ -156,5 +162,7 @@ export function useProgress() {
     beginTraining,
     answerTraining,
     advanceTraining,
+    saveEvaluationSession,
+    submitEvaluationResponse,
   };
 }

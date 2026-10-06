@@ -153,6 +153,7 @@ export type TrainingSession = {
 };
 
 export type UserProgress = {
+  evaluationSession?: import('./evaluation').EvaluationSession;
   schemaVersion: 2;
   studiedSkills: string[];
   review: Record<
@@ -174,4 +175,4 @@ export type UserProgress = {
 };
 
 export type AppView =
-  "map" | "lesson" | "training" | "proofs" | "exercises" | "review";
+  "map" | "lesson" | "training" | "proofs" | "exercises" | "review" | "avaliacao-ifsp";
