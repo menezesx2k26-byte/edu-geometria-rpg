@@ -9,39 +9,51 @@ on:
 permissions:
   contents: read
 
+concurrency:
+  group: geometria-rpg-one-shot-redeploy
+  cancel-in-progress: false
+
 jobs:
   deploy:
-    runs-on: ubuntu-latest
-    timeout-minutes: 20
-    env:
-      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+    runs-on: [self-hosted, Windows, X64, gabriel-ops, desktop]
+    timeout-minutes: 25
     steps:
-      - name: Check Cloudflare credentials
-        shell: bash
-        run: |
-          test -n "$CLOUDFLARE_API_TOKEN" || { echo "CLOUDFLARE_API_TOKEN secret is missing"; exit 2; }
-          echo "Cloudflare API token is configured."
-
       - name: Checkout deployment commit
         uses: actions/checkout@v4
         with:
           ref: a972ce5c5f3963b70d5120e4323342bd84730006
+          fetch-depth: 1
 
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 22
+          node-version: '22.23.3'
           cache: npm
 
       - name: Install
-        run: npm ci
+        shell: powershell
+        run: npm ci --prefer-offline --no-audit --no-fund
 
       - name: Unit tests
+        shell: powershell
         run: npm run test:unit
 
       - name: Build
+        shell: powershell
         run: npm run build
 
-      - name: Deploy to Cloudflare Workers
+      - name: Deploy through existing Wrangler session
+        shell: powershell
         run: npm run deploy:cloudflare
+
+      - name: Verify worker responds
+        shell: powershell
+        run: |
+          $response = Invoke-WebRequest -UseBasicParsing -Uri 'https://geometria-rpg.menezesx2k25.workers.dev/' -TimeoutSec 30
+          if ($response.StatusCode -ne 200) { throw "Worker returned HTTP $($response.StatusCode)" }
+          Write-Output "LIVE_HTTP_STATUS=$($response.StatusCode)"
+
+      - name: Record deployed version
+        if: always()
+        shell: powershell
+        run: npx wrangler deployments list
