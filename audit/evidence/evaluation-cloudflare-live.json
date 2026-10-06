@@ -1,0 +1,11 @@
+{
+  "url": "https://geometria-rpg.menezesx2k25.workers.dev/#avaliacao-ifsp",
+  "httpStatus": 200,
+  "bundle": "GeometryApp-BI_iQsSa.js",
+  "bundleStatus": 200,
+  "localSHA256": "42ec43dc4e8dd76d158b4a51390ce2538ac6614da7b5d27a8ea62d27374f2b83",
+  "remoteSHA256": "42ec43dc4e8dd76d158b4a51390ce2538ac6614da7b5d27a8ea62d27374f2b83",
+  "identicalBundle": true,
+  "overflow": false,
+  "pageErrors": []
+}

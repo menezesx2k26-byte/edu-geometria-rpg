@@ -1,0 +1,10 @@
+
+Running 2 tests using 1 worker
+
+
+
+(node:22556) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[1/2] [360x800] › tests\e2e\evaluation-trail.spec.ts:9:1 › complete IFSP campaign with persistence, mastery and transfer
+[2/2] [360x800] › tests\e2e\evaluation-trail.spec.ts:75:1 › V/F requires a reason, hints persist before submission, opening grants no evidence
+  2 passed (2.6m)

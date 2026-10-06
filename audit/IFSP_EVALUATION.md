@@ -31,11 +31,25 @@
 
 ## Execution checkpoint
 
-- Implementation and regression validated. Local preview uses port 3000; production deployment still blocked.
+- Implementation and regression validated. Local preview uses port 3000. Cloudflare publication is now active; see the deployment ledger below.
 - Quota guard: EMERGENCY (primary account usage 94%, secondary 78%; threshold 85%). No heavy model fan-out or additional discovery. Remaining work is bounded verification, targeted corrections if required, commit, PR, attachment and verified report.
 - Account-memory decision: no new stable cross-project user fact. Project state belongs here; no account-memory write required.
-- User explicitly requested production publication. Retried native get_site with the manifest ID: project_not_found/404; list_sites returned zero accessible sites. Asked the user to reconnect Sites to the owning account. No replacement site created; deployment has not changed.
+- The original Sites account returns project_not_found/404 and exposes no accessible sites. The user subsequently authorized Cloudflare hosting explicitly. The original chatgpt.site deployment remains unchanged; the same application is now hosted on Cloudflare Workers.
 
 ## Reuse and review decision
 
-The published progress transaction, scheduler, hash navigation, SVG conventions and typography are retained. A small authored runner is necessary for this course-specific sequence of construction actions, ordered justifications and bounded transfer; a generic quiz dependency would not supply those mathematical contracts and would add a second persistence layer. No architecture replacement, paid API or subagent was used. Frontend review is approved for the verified textual brief; original exam-image completeness and production publication remain explicitly open.
+The published progress transaction, scheduler, hash navigation, SVG conventions and typography are retained. A small authored runner is necessary for this course-specific sequence of construction actions, ordered justifications and bounded transfer; a generic quiz dependency would not supply those mathematical contracts and would add a second persistence layer. No architecture replacement, paid API or subagent was used. Frontend review is approved for the verified textual brief; original exam-image completeness remains explicitly open.
+
+## Cloudflare deployment — 2026-10-06
+
+- Explicit user instruction: publish on Cloudflare. Reused installed Wrangler OAuth and the existing Workers-compatible Vinext build. Account identity and namespace verified before mutation; no existing Geometria Worker was present.
+- URL: https://geometria-rpg.menezesx2k25.workers.dev/#avaliacao-ifsp
+- Worker: geometria-rpg; account bfe54392c159b21ee1af63282f131136; version 99a75392-78c6-4962-8391-f222de0cbc38; tag ifsp-56b3126.
+- Source/build: campaign commit 56b3126def156690ee06b814c08aaf85dac6e65c. Subsequent changes are deployment documentation, an npm deploy command and an optional Playwright remote base URL; application code unchanged.
+- Dry run passed. Deployment uploaded 93 static assets and a 320.21 KiB compressed Worker; no database, KV, R2, AI or other resource bindings provisioned. No subscription change requested. Subscription inspection was unavailable (403), so no billing-plan claim is made.
+- Public root and campaign load with HTTP 200. The public GeometryApp-BI_iQsSa.js has SHA-256 42ec43dc4e8dd76d158b4a51390ce2538ac6614da7b5d27a8ea62d27374f2b83, identical to the locally validated bundle. Mobile page has no runtime error or horizontal overflow.
+- Public full-campaign and hint-persistence E2E: 2 passed in 2.6 minutes at 360x800, covering all 66 steps, six checkpoints, constructed geometry, complete boss, changed mastery, persisted drafts/feedback and final reload. Deployment-only Playwright config lint and TypeScript passed; previously recorded full regression remains valid for unchanged app code.
+- Evidence: evaluation-cloudflare-deploy.txt, evaluation-cloudflare-e2e.txt and evidence/evaluation-cloudflare-live.json.
+- Progress remains browser-local per origin. Existing progress under the old site or localhost remains there and does not automatically transfer to the Cloudflare address.
+
+Redeployment: `npm run build`, verify `wrangler whoami`, then set the verified `CLOUDFLARE_ACCOUNT_ID` and run `npm run deploy:cloudflare`. Smoke-test a deployment with `PLAYWRIGHT_BASE_URL` set to its public URL. Preserve existing compatible verification evidence instead of rerunning the full matrix for deployment-only changes.
