@@ -1,0 +1,183 @@
+
+ ⛅️ wrangler 4.92.0 (update available 4.147.0)
+──────────────────────────────────────────────
+Attaching additional modules:
+┌──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┬──────┬────────────┐
+│ Name                                                                                                                 │ Type │ Size       │
+├──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┼──────┼────────────┤
+│ ssr/index.js                                                                                                         │ esm  │ 271.28 KiB │
+├──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┼──────┼────────────┤
+│ ssr/vinext-client-assets.js                                                                                          │ esm  │ 0.90 KiB   │
+├──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┼──────┼────────────┤
+│ ssr/_next/static/app-prefetch-fetch-queue-DxuBK-0j.js                                                                │ esm  │ 0.00 KiB   │
+├──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┼──────┼────────────┤
+│ ssr/_next/static/app-router-scroll-BjaUXOMW.js                                                                       │ esm  │ 2.48 KiB   │
+├──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┼──────┼────────────┤
+│ ssr/_next/static/error-boundary-BHW6l-7s.js                                                                          │ esm  │ 5.27 KiB   │
+├──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┼──────┼────────────┤
+│ ssr/_next/static/GeometryApp-DTjYuvNJ.js                                                                             │ esm  │ 417.96 KiB │
+├──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┼──────┼────────────┤
+│ ssr/_next/static/layout-segment-context-Bmoyw7Af.js                                                                  │ esm  │ 0.37 KiB   │
+├──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┼──────┼────────────┤
+│ ssr/_next/static/static.edge-CHNQg6Vk.js                                                                             │ esm  │ 0.16 KiB   │
+├──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┼──────┼────────────┤
+│ ssr/__vite_rsc_assets_manifest.js                                                                                    │ esm  │ 1.97 KiB   │
+├──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┼──────┼────────────┤
+│ vinext-client-assets.js                                                                                              │ esm  │ 0.90 KiB   │
+├──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┼──────┼────────────┤
+│ _next/static/app-elements-lALwLlzT.js                                                                                │ esm  │ 43.00 KiB  │
+├──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┼──────┼────────────┤
+│ _next/static/app-page-cache-DQcCb4m9.js                                                                              │ esm  │ 4.79 KiB   │
+├──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┼──────┼────────────┤
+│ _next/static/app-page-cache-finalizer-wFKbYVSR.js                                                                    │ esm  │ 5.32 KiB   │
+├──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┼──────┼────────────┤
+│ _next/static/app-page-cache-render-dDKxxM-h.js                                                                       │ esm  │ 1.86 KiB   │
+├──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┼──────┼────────────┤
+│ _next/static/app-page-stream-Byw38YzR.js                                                                             │ esm  │ 9.80 KiB   │
+├──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┼──────┼────────────┤
+│ _next/static/app-prerender-endpoints-D8Hrz-Qj.js                                                                     │ esm  │ 1.96 KiB   │
+├──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┼──────┼────────────┤
+│ _next/static/app-prerender-static-params-DDMlaXsc.js                                                                 │ esm  │ 0.17 KiB   │
+├──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┼──────┼────────────┤
+│ _next/static/app-route-handler-dispatch-BHFW1Pg6.js                                                                  │ esm  │ 25.37 KiB  │
+├──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┼──────┼────────────┤
+│ _next/static/app-segment-config-CF5ai9Wn.js                                                                          │ esm  │ 13.68 KiB  │
+├──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┼──────┼────────────┤
+│ _next/static/app-static-generation-Cz2cfjjU.js                                                                       │ esm  │ 0.89 KiB   │
+├──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┼──────┼────────────┤
+│ _next/static/framework~index-C0-sSg6i.js                                                                             │ esm  │ 0.19 KiB   │
+├──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┼──────┼────────────┤
+│ _next/static/framework~index~layout~page~app-page-cache-render~app-page-cache~app-route-handler-dispatch-euTdYXWf.js │ esm  │ 5.98 KiB   │
+├──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┼──────┼────────────┤
+│ _next/static/framework~index~page~app-route-handler-dispatch-Czyy2-iO.js                                             │ esm  │ 55.29 KiB  │
+├──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┼──────┼────────────┤
+│ _next/static/implicit-tags-iLtnUnbX.js                                                                               │ esm  │ 1.63 KiB   │
+├──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┼──────┼────────────┤
+│ _next/static/instrumentation-BNUvE1EW.js                                                                             │ esm  │ 1.92 KiB   │
+├──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┼──────┼────────────┤
+│ _next/static/navigation-runtime-BQzZ6JD3.js                                                                          │ esm  │ 0.78 KiB   │
+├──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┼──────┼────────────┤
+│ _next/static/page-DZLTi34s.js                                                                                        │ esm  │ 0.48 KiB   │
+├──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┼──────┼────────────┤
+│ _next/static/record-DW-UYlLY.js                                                                                      │ esm  │ 2.85 KiB   │
+├──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┼──────┼────────────┤
+│ _next/static/rolldown-runtime-DUnMT5BP.js                                                                            │ esm  │ 0.68 KiB   │
+├──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┼──────┼────────────┤
+│ _next/static/root-params-BxYFMfiK.js                                                                                 │ esm  │ 1.03 KiB   │
+├──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┼──────┼────────────┤
+│ _next/static/rsc-C0u-JDoU.js                                                                                         │ esm  │ 0.71 KiB   │
+├──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┼──────┼────────────┤
+│ _next/static/text-stream-ByklGn5R.js                                                                                 │ esm  │ 18.58 KiB  │
+├──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┼──────┼────────────┤
+│ __vite_rsc_assets_manifest.js                                                                                        │ esm  │ 1.97 KiB   │
+├──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┼──────┼────────────┤
+│ Total (33 modules)                                                                                                   │      │ 900.23 KiB │
+└──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┴──────┴────────────┘
+🌀 Building list of assets...
+✨ Read 106 files from the assets directory C:\Users\Pichau\Documents\Codex\2026-10-05\files-pasted-by-the-user-modo\work\geometria-production\dist\client
+🌀 Starting asset upload...
+🌀 Found 93 new or modified static assets to upload. Proceeding with upload...
++ /vinext-client-entry-manifest.json
++ /window.svg
++ /_next/static/chunks/rolldown-runtime-C60lm6uB.js
++ /assets/geometria_rpg_assets/README.txt
++ /_next/static/media/KaTeX_Size2-Regular.Dy4dx90m.woff2
++ /_next/static/media/KaTeX_Size2-Regular.oD1tc_U0.woff
++ /_next/static/media/KaTeX_Caligraphic-Bold.Dq_IR9rO.woff2
++ /_next/static/media/KaTeX_Caligraphic-Bold.BEiXGLvX.woff
++ /_next/static/media/KaTeX_Size4-Regular.DWFBv043.ttf
++ /_next/static/media/KaTeX_Fraktur-Bold.CL6g_b3V.woff2
++ /_next/static/media/KaTeX_SansSerif-Bold.D1sUS0GD.woff2
++ /_next/static/media/KaTeX_Caligraphic-Regular.wX97UBjC.ttf
++ /_next/static/media/KaTeX_Fraktur-Bold.BsDP51OF.woff
++ /_next/static/media/KaTeX_SansSerif-Bold.DbIhKOiC.woff
++ /_next/static/media/KaTeX_Math-Italic.t53AETM-.woff2
++ /_next/static/media/KaTeX_Main-Italic.NWA7e6Wa.woff2
++ /_next/static/media/KaTeX_Main-BoldItalic.SpSLRI95.woff
++ /_next/static/media/KaTeX_Fraktur-Bold.BdnERNNW.ttf
++ /_next/static/media/KaTeX_SansSerif-Bold.CFMepnvq.ttf
++ /_next/static/media/KaTeX_Typewriter-Regular.D3Ib7_Hf.ttf
++ /_next/static/media/KaTeX_Main-Regular.Dr94JaBh.woff
++ /_next/static/media/KaTeX_Main-BoldItalic.DzxPMmG6.ttf
++ /_next/static/media/KaTeX_Main-Bold.waoOVXN0.ttf
++ /_next/static/media/KaTeX_AMS-Regular.DRggAlZN.ttf
++ /assets/crops/boss-proof.png
++ /assets/crops/mediana.png
++ /assets/crops/lll.png
++ /assets/crops/ala.png
++ /assets/geometria_rpg_assets/07_simbolos_marcadores.png
++ /assets/geometria_rpg_assets/04_angulos.png
++ /assets/geometria_rpg_assets/06_interface_banners_divisores.png
++ /_next/static/1c3c9f52-7e1f-4f2d-b86b-bd84b7384fa6/_ssgManifest.js
++ /file.svg
++ /favicon.svg
++ /_next/static/media/KaTeX_Size3-Regular.CTq5MqoE.woff
++ /_next/static/media/KaTeX_Size1-Regular.mCD8mA8B.woff2
++ /_next/static/media/KaTeX_Size1-Regular.C195tn64.woff
++ /_next/static/media/KaTeX_Size3-Regular.DgpXs0kz.ttf
++ /_next/static/media/KaTeX_Script-Regular.D3wIWfF6.woff2
++ /_next/static/media/KaTeX_Script-Regular.D5yQViql.woff
++ /_next/static/media/KaTeX_Size2-Regular.B7gKUWhC.ttf
++ /_next/static/media/KaTeX_Size1-Regular.Dbsnue_I.ttf
++ /_next/static/media/KaTeX_Caligraphic-Bold.ATXxdsX0.ttf
++ /_next/static/media/KaTeX_Typewriter-Regular.CO6r4hn1.woff2
++ /_next/static/media/KaTeX_Typewriter-Regular.C0xS9mPB.woff
++ /_next/static/media/KaTeX_Script-Regular.C5JkGWo-.ttf
++ /_next/static/media/KaTeX_Math-BoldItalic.iY-2wyZ7.woff
++ /_next/static/media/KaTeX_SansSerif-Regular.BNo7hRIc.ttf
++ /_next/static/media/KaTeX_Main-Italic.BMLOBm91.woff
++ /_next/static/media/KaTeX_Main-Bold.Cx986IdX.woff2
++ /_next/static/media/KaTeX_AMS-Regular.BQhdFMY1.woff2
++ /_next/static/media/KaTeX_Math-BoldItalic.B3XSjfu4.ttf
++ /_next/static/media/KaTeX_AMS-Regular.DMm9YOAa.woff
++ /_next/static/media/KaTeX_Main-Regular.ypZvNtVU.ttf
++ /_next/static/chunks/index-Bz8FPnCy.js
++ /_next/static/chunks/GeometryApp-BI_iQsSa.js
++ /assets/crops/bissetriz.png
++ /assets/crops/isosceles-especial.png
++ /assets/crops/lal.png
++ /assets/geometria_rpg_assets/05_triangulo_isosceles.png
++ /assets/geometria_rpg_assets/03_casos_congruencia_e_teoremas.png
++ /assets/geometria_rpg_assets/00_mega_asset_sheet.png
++ /_next/static/1c3c9f52-7e1f-4f2d-b86b-bd84b7384fa6/_buildManifest.js
++ /_next/static/chunks/layout-segment-context-Du1TbqTG.js
++ /globe.svg
++ /_next/static/media/KaTeX_Size4-Regular.Dl5lxZxV.woff2
++ /_next/static/media/KaTeX_Size4-Regular.BF-4gkZK.woff
++ /_next/static/media/KaTeX_Caligraphic-Regular.Di6jR-x-.woff2
++ /_next/static/media/KaTeX_Caligraphic-Regular.CTRA-rTL.woff
++ /_next/static/media/KaTeX_SansSerif-Regular.DDBCnlJ7.woff2
++ /_next/static/media/KaTeX_Fraktur-Regular.CTYiF6lA.woff2
++ /_next/static/media/KaTeX_SansSerif-Italic.C3H0VqGB.woff2
++ /_next/static/media/KaTeX_SansSerif-Regular.CS6fqUqJ.woff
++ /_next/static/media/KaTeX_Fraktur-Regular.Dxdc4cR9.woff
++ /_next/static/media/KaTeX_SansSerif-Italic.DN2j7dab.woff
++ /_next/static/media/KaTeX_Math-BoldItalic.CZnvNsCZ.woff2
++ /_next/static/media/KaTeX_Main-BoldItalic.DxDJ3AOS.woff2
++ /_next/static/media/KaTeX_Math-Italic.DA0__PXp.woff
++ /_next/static/media/KaTeX_Fraktur-Regular.CB_wures.ttf
++ /_next/static/media/KaTeX_SansSerif-Italic.YYjJ1zSn.ttf
++ /_next/static/media/KaTeX_Main-Regular.B22Nviop.woff2
++ /_next/static/media/KaTeX_Main-Bold.Jm3AIy58.woff
++ /_next/static/media/KaTeX_Math-Italic.flOr_0UB.ttf
++ /_next/static/media/KaTeX_Main-Italic.3WenGoN9.ttf
++ /_next/static/css/index.BODmMdU3.css
++ /_next/static/chunks/framework-BgSIrAUN.js
++ /assets/crops/altura.png
++ /assets/crops/quest-banner.png
++ /assets/crops/isosceles-inverso.png
++ /assets/crops/isosceles-base.png
++ /assets/geometria_rpg_assets/02_cevianas.png
++ /assets/geometria_rpg_assets/01_congruencia_core.png
++ /assets/geometria_rpg_assets/08_exercicios_quests_bossproof.png
+Uploaded 31 of 93 assets
+Uploaded 62 of 93 assets
+Uploaded 93 of 93 assets
+✨ Success! Uploaded 93 files (7.29 sec)
+
+Total Upload: 1070.68 KiB / gzip: 320.21 KiB
+Worker Startup Time: 12 ms
+Uploaded geometria-rpg (14.99 sec)
+Deployed geometria-rpg triggers (3.26 sec)
+  https://geometria-rpg.menezesx2k25.workers.dev
+Current Version ID: 99a75392-78c6-4962-8391-f222de0cbc38

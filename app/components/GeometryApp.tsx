@@ -37,6 +37,7 @@ import { useProgress } from "../hooks/useProgress";
 import { getAsset } from "../lib/assets";
 import type { AppView, Exercise, Skill } from "../types/geometry";
 import { TrainingPage } from "./TrainingPage";
+import { EvaluationTrainingPage } from './EvaluationTrainingPage';
 import { GeometryFigure } from "./GeometryFigure";
 import { shuffleOptions } from "../engine/training";
 import { skillAvailable } from "../engine/progress";
@@ -115,7 +116,7 @@ function BottomNav({
           <button
             key={item.id}
             disabled={!ready}
-            className={view === item.id ? "is-active" : ""}
+            className={view === item.id || (view === 'avaliacao-ifsp' && item.id === 'training') ? "is-active" : ""}
             onClick={() => onChange(item.id)}
             aria-current={view === item.id ? "page" : undefined}
           >
@@ -129,6 +130,7 @@ function BottomNav({
 }
 
 type HomePageProps = {
+  onEvaluation: () => void;
   studiedSkills: string[];
   mastery: Record<string, number>;
   overall: number;
@@ -138,6 +140,7 @@ type HomePageProps = {
 };
 
 function HomePage({
+  onEvaluation,
   mastery,
   studiedSkills,
   overall,
@@ -159,6 +162,7 @@ function HomePage({
 
   return (
     <div className="page home-page">
+      <a href="#avaliacao-ifsp" className="evaluation-entry" onClick={(event)=>{ event.preventDefault(); onEvaluation(); }}><span><small>1ª Avaliação · IFSP</small><strong>Treino da avaliação — trilha única</strong></span><ArrowRight/></a>
       <section className="hero">
         <div className="hero__runes" aria-hidden="true">
           △ ◇ ∠ ≅ ⟂ △
@@ -783,6 +787,7 @@ function ReviewPage({
 }
 
 export default function GeometryApp() {
+  const controller = useProgress();
   const {
     progress,
     ready,
@@ -795,7 +800,7 @@ export default function GeometryApp() {
     beginTraining,
     answerTraining,
     advanceTraining,
-  } = useProgress();
+  } = controller;
   const [view, setView] = useState<AppView>("map");
   const lastSkillId = useMemo(
     () =>
@@ -809,7 +814,7 @@ export default function GeometryApp() {
     if (!ready) return;
     const readRoute = (restoreScroll = false) => {
       const [area, query] = window.location.hash.slice(1).split("?");
-      const next = navItems.find((item) => item.id === area)?.id ?? "map";
+      const next = area === 'avaliacao-ifsp' ? 'avaliacao-ifsp' : navItems.find((item) => item.id === area)?.id ?? "map";
       const skill = new URLSearchParams(query).get("skill");
       if (skill && skillAvailable(skill, progress)) setSelectedSkillId(skill);
       setView(next);
@@ -836,6 +841,7 @@ export default function GeometryApp() {
   const content =
     view === "map" ? (
       <HomePage
+        onEvaluation={() => changeView('avaliacao-ifsp')}
         mastery={progress.mastery}
         studiedSkills={progress.studiedSkills}
         overall={overallMastery}
@@ -846,6 +852,8 @@ export default function GeometryApp() {
           changeView("lesson", lastSkillId);
         }}
       />
+    ) : view === 'avaliacao-ifsp' ? (
+      <EvaluationTrainingPage controller={controller} onMap={()=>changeView('map')}/>
     ) : view === "lesson" ? (
       <LessonPage
         selectedSkillId={selectedSkillId}

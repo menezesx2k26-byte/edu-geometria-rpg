@@ -1,0 +1,48 @@
+.evaluation-page { max-width: 900px; }
+.evaluation-hero { margin-bottom: 22px; }
+.evaluation-hero h1 { font-size: clamp(1.9rem,6vw,3rem); line-height: 1.1; margin: 8px 0 14px; }
+.evaluation-hero p { color: var(--muted); max-width: 650px; }
+.evaluation-metrics { display: flex; flex-wrap: wrap; gap: 12px 24px; border-block: 1px solid var(--line); padding: 14px 0; }
+.evaluation-metrics span { display: grid; gap: 4px; color: var(--muted); font-size: .8rem; }
+.evaluation-metrics strong { color: var(--gold-bright); font-size: 1.3rem; }
+.evaluation-metric-note { color: var(--muted); font-size: .8rem; }
+.evaluation-path { list-style: none; display: flex; flex-wrap: wrap; gap: 8px 14px; padding: 0; margin: 20px 0; font-size: .75rem; }
+.evaluation-path li { display: flex; align-items: center; gap: 6px; color: var(--muted); }
+.evaluation-path li.is-current { color: var(--gold-bright); font-weight: 800; }
+.evaluation-path li.is-complete { color: var(--green); }
+.evaluation-path li > span { border: 1px solid currentColor; padding: 3px 7px; border-radius: 50%; }
+.evaluation-card { overflow-wrap: anywhere; border: 1px solid var(--line); border-radius: 16px; background: var(--surface); padding: clamp(18px,4vw,30px); box-shadow: var(--shadow); }
+.evaluation-card h2 { margin: 8px 0 16px; font-size: clamp(1.3rem,4vw,1.9rem); line-height: 1.3; }
+.evaluation-card > p { color: var(--muted); }
+.evaluation-figure { margin: 16px auto; max-width: 480px; background: var(--parchment); padding: 12px; border-radius: 12px; }
+.evaluation-figure svg { display: block; width: 100%; max-height: 280px; stroke: var(--bg); stroke-width: 2; fill: none; }
+.evaluation-figure text { fill: var(--bg); stroke: none; font-size: 16px; font-family: var(--sans); }
+.evaluation-figure circle { fill: var(--bg); }
+.evaluation-figure .is-accent { stroke: #226c8a; stroke-width: 3; }
+.evaluation-figure .boss-parallelogram { fill: rgba(56,138,101,.12); stroke: #286b4f; stroke-width: 3; }
+.evaluation-figure figcaption { color: #314c50; font-size: .76rem; line-height: 1.5; margin-top: 4px; }
+.evaluation-options { display: grid; gap: 10px; margin: 18px 0 0; padding: 0; border: 0; min-width: 0; }
+.evaluation-options legend { color: var(--gold-bright); font-size: .8rem; font-weight: 700; padding-bottom: 8px; }
+.evaluation-options > button { min-height: 48px; border: 1px solid var(--line); border-radius: 9px; padding: 13px 14px; color: var(--text); text-align: left; background: var(--surface-2); cursor: pointer; }
+.evaluation-options > button.is-selected { border-color: var(--gold-bright); box-shadow: inset 4px 0 var(--gold); background: var(--surface-3); }
+.evaluation-options > button:disabled { opacity: 1; cursor: default; }
+.evaluation-convention { display: grid; gap: 8px; color: var(--muted); font-size: .82rem; }
+.evaluation-convention select { width: 100%; max-width: 100%; min-height: 44px; color: var(--text); border: 1px solid var(--line); background: var(--surface-2); border-radius: 8px; padding: 8px; }
+.evaluation-number { display: grid; gap: 8px; }
+.evaluation-number input { width: min(240px,100%); min-height: 48px; border: 1px solid var(--line); border-radius: 8px; padding: 10px; font: inherit; color: var(--text); background: var(--surface-2); }
+.evaluation-hint { display: flex; gap: 8px; align-items: center; margin-top: 16px; min-height: 44px; color: var(--gold-bright); background: transparent; border: 0; padding: 8px 0; text-align: left; cursor: pointer; }
+.evaluation-feedback { margin-top: 18px; border-radius: 10px; padding: 14px; border: 1px solid var(--line); }
+.evaluation-feedback.is-correct { border-color: var(--green); }
+.evaluation-feedback.is-wrong { border-color: var(--red); }
+.evaluation-feedback p { margin: 8px 0 0; color: var(--muted); }
+.evaluation-footer { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px; margin-top: 20px; border-top: 1px solid var(--line); padding-top: 16px; }
+.evaluation-footer > span { color: var(--muted); font-size: .72rem; }
+.evaluation-transfer, .evaluation-remediation { padding-left: 12px; border-left: 3px solid var(--gold); font-size: .82rem; }
+.evaluation-card details { margin-bottom: 18px; line-height: 1.6; }
+.evaluation-card summary { min-height: 44px; cursor: pointer; font-weight: 700; color: var(--gold-bright); }
+.evaluation-source { display: grid; gap: 4px; margin-top: 20px; color: var(--muted); font-size: .72rem; }
+.evaluation-source strong { color: var(--text); }
+.evaluation-entry { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 16px 20px; margin-bottom: 24px; border: 1px solid var(--gold-dim); border-radius: 12px; background: var(--surface); }
+.evaluation-entry span { display: grid; gap: 4px; }
+.evaluation-entry small { color: var(--gold-bright); }
+.evaluation-entry strong { font-family: var(--serif); font-size: 1.2rem; }

@@ -5,7 +5,8 @@ export default defineConfig({
   fullyParallel: false,
   workers: 1,
   reporter: [["list"], ["html", { open: "never" }]],
-  use: { baseURL: "http://localhost:3000", trace: "retain-on-failure" },
+  use: { baseURL: process.env.PLAYWRIGHT_BASE_URL ?? "http://localhost:3000", trace: "retain-on-failure",
+    launchOptions: { executablePath: process.env.PLAYWRIGHT_EXECUTABLE_PATH } },
   projects: [
     { name: "360x800", use: { viewport: { width: 360, height: 800 } } },
     { name: "390x844", use: { viewport: { width: 390, height: 844 } } },

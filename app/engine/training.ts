@@ -32,7 +32,7 @@ export function createSession(
   now: number,
 ): TrainingSession {
   const seed = hash(String(p.sessionCount + 1), now >>> 0);
-  const candidates = pool
+  let candidates = pool
     .filter((q) => skillAvailable(q.skillId, p))
     .map((q) => {
       const record = p.questions[q.id];
@@ -72,6 +72,11 @@ export function createSession(
         tie: hash(q.id, seed),
       };
     });
+  const recent = p.trainingSession?.queue.slice(-5).map(entry=>entry.questionId) ?? [];
+  // Use another eligible variant of the skill before repairing an exact recent
+  // question. This cooldown is part of the saved session, not render randomness.
+  candidates = candidates.filter(candidate => !recent.includes(candidate.question.id)
+    || !candidates.some(other => other.question.skillId === candidate.question.skillId && !recent.includes(other.question.id)));
   const used = new Set<string>();
   const skillCounts = new Map<string, number>();
   const familyCounts = new Map<string, number>();
