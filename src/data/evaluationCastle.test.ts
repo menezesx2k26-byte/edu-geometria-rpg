@@ -57,6 +57,7 @@ describe('evaluation castle content', () => {
   it('does not leak eight metres as a given in the ramp figure', () => {
     const question = EVALUATION_CASTLE_QUESTIONS.find((item) => item.id === 'q5-ramp');
     expect(question?.figure.anchors.some((anchor) => /8\s*m/i.test(anchor.label))).toBe(false);
-    expect(question?.explanation).toContain('2+6=8');
+    expect(question?.kind).toBe('single');
+    if (question?.kind === 'single') expect(question.explanation).toContain('2+6=8');
   });
 });
