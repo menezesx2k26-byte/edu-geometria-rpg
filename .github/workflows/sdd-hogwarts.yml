@@ -1,5 +1,9 @@
 name: SDD Hogwarts Memory Castle
 
+concurrency:
+  group: sdd-hogwarts-memory-castle
+  cancel-in-progress: true
+
 on:
   push:
     branches:
