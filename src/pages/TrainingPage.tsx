@@ -74,9 +74,9 @@ export function TrainingPage() {
 
       <article className="training-card" style={{ marginTop: 22 }}>
         <small>Prioridade agora · 1ª Avaliação IFSP</small>
-        <h2>Treino da avaliação — trilha única</h2>
-        <p>Seis famílias da prova antiga em sequência fixa. Você nunca fica preso numa questão: as erradas voltam apenas no fechamento da rodada.</p>
-        <span className="training-skill">V/F · paralelogramo · desigualdade · cevianas · semelhança · isósceles</span>
+        <h2>Castelo Mental da Avaliação</h2>
+        <p>Seis salas fixas para recuperar as seis famílias da prova. Errou? Você segue pelo castelo e revisita só as salas pendentes no fim da rodada.</p>
+        <span className="training-skill">Retratos · diagonais · ponte · cevianas · rampa · isósceles</span>
         <div>
           <Link className="primary-action" to="/avaliacao-ifsp"><FlaskConical size={16} /> Começar agora <ArrowRight size={16} /></Link>
         </div>
